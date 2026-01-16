@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Roadway VR - SUMO Tutorials</title>
+    <title>Student Showcase</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap 5 -->
@@ -12,11 +12,17 @@
       crossorigin="anonymous">
 
     <style>
+      :root{
+        --hero-bg: #111;
+        --hero-fg: #fff;
+        --page-bg: #fafafa;
+        --accent: #0ea5a6;
+      }
+
       body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                     sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         scroll-behavior: smooth;
-        background-color: #fafafa;
+        background-color: var(--page-bg);
       }
 
       /* NAVBAR */
@@ -27,10 +33,13 @@
         font-weight: 700;
       }
 
+      a { color: var(--accent); }
+      a:hover { opacity: 0.85; }
+
       /* Top quote banner */
       .hero-banner {
-        background-color: #111;
-        color: #fff;
+        background-color: var(--hero-bg);
+        color: var(--hero-fg);
       }
 
       .hero-quote {
@@ -46,13 +55,18 @@
         letter-spacing: 0.03em;
       }
 
-      /* Big hero image */
-      .hero-main-img {
-        border-radius: 6px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+      .section-subtitle {
+        max-width: 820px;
+        margin: 0 auto;
       }
 
-      /* Circle tutorial images */
+      /* Big hero image */
+      .hero-main-img {
+        border-radius: 8px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
+      }
+
+      /* Circle images */
       .circle-img {
         width: 150px;
         height: 150px;
@@ -63,12 +77,12 @@
       }
 
       .tutorial-title {
-        font-size: 0.95rem;
+        font-size: 0.98rem;
         font-weight: 700;
       }
 
       .tutorial-text {
-        font-size: 0.85rem;
+        font-size: 0.88rem;
       }
 
       .star-divider {
@@ -78,12 +92,46 @@
         margin: 2.5rem 0 1.5rem;
       }
 
-      footer {
-        border-top: 1px solid #ddd;
-        background-color: #fff;
+      .little-star {
+        font-size: 1.6rem;
+        color: #777;
       }
 
-      /* Portrait photo under the quote */
+      /* Large module images */
+      .tutorial-large-img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.16);
+        display: block;
+      }
+
+      @media (min-width: 992px) {
+        .tutorial-large-img { max-width: 640px; }
+      }
+
+      /* Checkmark list */
+      .check-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .check-list li {
+        position: relative;
+        padding-left: 1.4rem;
+        margin-bottom: 0.4rem;
+        font-size: 0.98rem;
+      }
+
+      .check-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #198754;
+        font-weight: 700;
+      }
+
+      /* Portrait photo */
       .hero-photo {
         width: 120px;
         height: 120px;
@@ -93,18 +141,49 @@
         display: block;
         margin: 1.5rem auto 1.5rem;
       }
+
+      footer {
+        border-top: 1px solid #ddd;
+        background-color: #fff;
+      }
+
+      .footer-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-link {
+        display: block;
+        text-decoration: none;
+        color: #6c757d;
+        margin-bottom: 0.25rem;
+      }
+
+      .footer-link:hover {
+        color: #0d6efd;
+      }
+
+      /* Vertical centering in module rows */
+      .tutorial-text-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* Make overview a bit narrower */
+      .tutorials-narrow { max-width: 1100px; }
     </style>
   </head>
+
   <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#top">
-          <span
-            class="navbar-brand-box border border-2 border-dark rounded-1 d-inline-flex align-items-center justify-content-center me-2">
+          <span class="navbar-brand-box border border-2 border-dark rounded-1 d-inline-flex align-items-center justify-content-center me-2">
             VR
           </span>
-          <span class="fw-semibold">Roadway VR</span>
+          <span class="fw-semibold" id="brandText">Student Showcase</span>
         </a>
 
         <button class="navbar-toggler" type="button"
@@ -116,41 +195,38 @@
 
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" href="#top">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"
-                 href="https://www.youtube.com/@RoadwayVR"
-                 target="_blank">
-                YouTube
-              </a>
-            </li>
+            <li class="nav-item"><a class="nav-link active" href="#top">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#overview">Tutorials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#basic">Basic Tutorials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- QUOTE BANNER -->
+    <!-- TOP BLACK BANNER -->
     <header id="top" class="hero-banner text-center py-5">
       <div class="container">
-        <p class="hero-quote mb-3">
-          "Let's Grow Together<br>
-          One Heart, One Community"
+        <p class="hero-quote mb-3" id="heroQuote">
+          “Let’s Grow Together<br>One Heart, One Community”
         </p>
 
-        <!-- Your photo -->
         <img
-          src="assets/img/profile.jpg"
-          alt="Photo of Ahmad Mohammadi"
-          class="hero-photo">
+          src="assets/img/image1.jpg"
+          alt="Student photo"
+          class="hero-photo"
+          id="profileImg">
 
-        <p class="mb-1 fw-semibold">Educator: Ahmad Mohammadi</p>
-        <p class="mb-0 small text-uppercase text-muted">
-          PhD in Transportation Engineering, York University, Canada
+        <p class="mb-1 fw-semibold" id="studentNameLine">Student: Your Name</p>
+
+        <p class="mb-2 small text-uppercase text-white" id="studentAffilLine">
+          Program / Lab / Department, York University, Canada
+        </p>
+
+        <p class="mb-0 small">
+          <a class="text-white text-decoration-underline" id="emailLink" href="mailto:your.email@example.com">
+            your.email@example.com
+          </a>
         </p>
       </div>
     </header>
@@ -159,21 +235,20 @@
       <!-- MAIN HEADING + BIG IMAGE -->
       <section class="py-5 text-center bg-white">
         <div class="container">
-          <h1 class="section-title h2 mb-4">
+          <h1 class="section-title h2 mb-4" id="introTitle">
             Open Learning Materials for Simulation of Urban Mobility (SUMO)
           </h1>
-          <p class="lead mb-4">
-            SUMO Traffic Simulator tutorials from quick start and traffic
-            signals to reinforcement learning and immersive technology.
+          <p class="lead mb-4 section-subtitle" id="introSubtitle">
+            SUMO Traffic Simulator tutorials from quick start and traffic signals to reinforcement learning, energy &amp; emissions, and immersive VR-based traffic studies.
           </p>
 
-          <!-- Big image centered with margins on both sides -->
           <div class="row justify-content-center">
             <div class="col-md-8">
               <img
-                src="assets/img/Firstpage.jpg"
-                alt="SUMO intersection and aerial view"
-                class="img-fluid hero-main-img">
+                src="assets/img/image2.jpg"
+                alt="Project showcase image"
+                class="img-fluid hero-main-img"
+                id="introHeroImg">
             </div>
           </div>
         </div>
@@ -182,200 +257,32 @@
       <!-- TUTORIALS AT ONE GLANCE -->
       <div class="star-divider">*</div>
       <section id="overview" class="py-5 bg-white">
-        <div class="container">
-          <h2 class="section-title h3 text-center mb-3">
-            Tutorials at One Glance
-          </h2>
-          <p class="text-center mb-5">
-            SUMO tutorials from SUMO Quick Start and NetEdit to TraCI, CAVs,
-            energy & emission, and SUMO2Unity.
+        <div class="container tutorials-narrow">
+          <h2 class="section-title h3 text-center mb-3" id="overviewTitle">Tutorials at One Glance</h2>
+          <p class="text-center mb-5 section-subtitle" id="overviewSubtitle">
+            A 4-step Digital Twin pipeline: sensing → modeling → optimizing → deciding.
           </p>
 
-          <!-- 11 tutorial parts in circles -->
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 justify-content-center">
-
-            <!-- PART 1 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part1.jpg"
-                  alt="Part 1"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 1: SUMO Quick Start:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Set up a basic SUMO project and get familiar with the UI.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 2 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part2.png"
-                  alt="Part 2"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 2: SUMO NetEdit:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Import GIS maps, create road networks, and add traffic volume.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 3 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part3.png"
-                  alt="Part 3"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 3: SUMO TraCI:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Control the simulation from external tools for optimization.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 4 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part4.png"
-                  alt="Part 4"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 4: SUMO NetConvert:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Convert and refine network formats including OSM and OpenDRIVE.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 5 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part5.png"
-                  alt="Part 5"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 5: Vehicle Types & Behavior:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Explore car-following and lane-changing models for cars,
-                  bikes, scooters, and more.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 6 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part6.png"
-                  alt="Part 6"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 6: SUMO & Immersive Technology:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Discover SUMO2Unity co-simulation and VR-based traffic studies.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 7 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part7.png"
-                  alt="Part 7"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 7: SUMO & Autonomous Vehicles:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Learn fundamentals of connected and autonomous vehicles in SUMO.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 8 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part8.png"
-                  alt="Part 8"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 8: SUMO & Machine Learning:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Reinforcement learning concepts and implementations in SUMO.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 9 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part9.png"
-                  alt="Part 9"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 9: SUMO & Emergency Management:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Traffic signal priority and emergency vehicle behavior.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 10 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part10.png"
-                  alt="Part 10"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 10: Energy, Emission, and EVs:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Energy and emission modeling for ICE and electric vehicles.
-                </p>
-              </div>
-            </div>
-
-            <!-- PART 11 -->
-            <div class="col">
-              <div class="text-center h-100 px-3">
-                <img
-                  src="assets/img/part11.png"
-                  alt="Part 11"
-                  class="circle-img">
-                <p class="tutorial-title mt-2 mb-1">
-                  Part 11: From QGIS to SUMO:
-                </p>
-                <p class="tutorial-text text-muted mb-0">
-                  Bring GIS networks from QGIS into SUMO.
-                </p>
-              </div>
-            </div>
-
-          </div> <!-- /row -->
+          <!-- 4 circles rendered here -->
+          <div id="stepsRow" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 justify-content-center"></div>
         </div>
       </section>
 
-      <!-- ABOUT SECTION -->
+      <!-- SUMO BASIC TUTORIALS (4 blocks only) -->
+      <div class="star-divider">*</div>
+      <section id="basic" class="py-5 bg-white">
+        <div class="container">
+          <h2 class="section-title h3 text-center mb-3" id="basicTitle">SUMO Basic Tutorials</h2>
+          <p class="text-center mb-5 section-subtitle" id="basicSubtitle">
+            Showcase four key modules of your project. Keep it short, clear, and visual.
+          </p>
+
+          <!-- 4 module rows rendered here -->
+          <div id="modulesContainer"></div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION (kept as-is) -->
       <div class="star-divider">*</div>
       <section id="about" class="py-5 bg-light">
         <div class="container">
@@ -396,23 +303,39 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="py-4">
+    <!-- FOOTER (kept as-is) -->
+    <footer class="py-5">
       <div class="container small">
-        <div class="row">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <strong>Roadway VR</strong><br>
-            SUMO "Simulation of Urban Mobility" Tutorials
+        <div class="row gy-4">
+          <div class="col-md-3">
+            <div class="d-flex align-items-center mb-2">
+              <span class="navbar-brand-box border border-2 border-dark rounded-1 d-inline-flex align-items-center justify-content-center me-2">
+                VR
+              </span>
+              <span class="fw-semibold">Roadway VR</span>
+            </div>
+            <p class="mb-0">
+              SUMO “Simulation of Urban Mobility” tutorials and open learning
+              materials for researchers, students, and practitioners.
+            </p>
           </div>
-          <div class="col-md-6 text-md-end">
-            <a href="#top" class="me-3 text-decoration-none text-muted">Home</a>
-            <a href="#about" class="me-3 text-decoration-none text-muted">About</a>
-            <a href="https://www.youtube.com/@RoadwayVR"
-               target="_blank"
-               class="me-3 text-decoration-none text-muted">YouTube</a>
-            <a href="https://github.com/Ahmad1441"
-               target="_blank"
-               class="me-3 text-decoration-none text-muted">GitHub</a>
+
+          <div class="col-md-3">
+            <div class="footer-title">About</div>
+            <a href="#about" class="footer-link">About Roadway VR</a>
+            <a href="#overview" class="footer-link">Tutorial Overview</a>
+          </div>
+
+          <div class="col-md-3">
+            <div class="footer-title">Contact</div>
+            <a href="mailto:AhmadMohammadi1441@gmail.com" class="footer-link">Contact Me</a>
+          </div>
+
+          <div class="col-md-3">
+            <div class="footer-title">Social</div>
+            <a href="https://www.youtube.com/@RoadwayVR" target="_blank" class="footer-link">YouTube</a>
+            <a href="https://github.com/RoadwayVR" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/ahmadmohammadi1441/" target="_blank" class="footer-link">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -422,5 +345,119 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"></script>
+
+    <!-- Config (students edit config.js only) -->
+    <script src="config.js"></script>
+
+    <!-- Apply config -->
+    <script>
+      const C = window.SITE_CONFIG || {};
+
+      // Theme
+      if (C.theme) {
+        document.documentElement.style.setProperty("--hero-bg",  C.theme.heroBg  || "#111");
+        document.documentElement.style.setProperty("--hero-fg",  C.theme.heroText || "#fff");
+        document.documentElement.style.setProperty("--page-bg",  C.theme.pageBg  || "#fafafa");
+        document.documentElement.style.setProperty("--accent",   C.theme.accent  || "#0ea5a6");
+      }
+
+      // Page title + brand
+      if (C.pageTitle) document.title = C.pageTitle;
+
+      const setText = (id, val) => {
+        const el = document.getElementById(id);
+        if (el && val !== undefined && val !== null) el.textContent = val;
+      };
+      const setHTML = (id, val) => {
+        const el = document.getElementById(id);
+        if (el && val !== undefined && val !== null) el.innerHTML = val;
+      };
+
+      setText("brandText", C.navBrand || "Student Showcase");
+
+      // Hero banner
+      if (C.hero) {
+        setHTML("heroQuote", C.hero.quoteHtml);
+
+        setText("studentNameLine", C.hero.studentName ? `Student: ${C.hero.studentName}` : "");
+        setText("studentAffilLine", [C.hero.program, C.hero.university].filter(Boolean).join(", "));
+
+        const emailLink = document.getElementById("emailLink");
+        if (emailLink && C.hero.email) {
+          emailLink.textContent = C.hero.email;
+          emailLink.href = "mailto:" + C.hero.email;
+        }
+
+        const profileImg = document.getElementById("profileImg");
+        if (profileImg && C.hero.profileImage) profileImg.src = C.hero.profileImage;
+        if (profileImg && C.hero.studentName) profileImg.alt = `Photo of ${C.hero.studentName}`;
+      }
+
+      // Intro
+      if (C.intro) {
+        setText("introTitle", C.intro.title);
+        setText("introSubtitle", C.intro.subtitle);
+
+        const introHeroImg = document.getElementById("introHeroImg");
+        if (introHeroImg && C.intro.heroImage) introHeroImg.src = C.intro.heroImage;
+        if (introHeroImg && C.intro.heroImageAlt) introHeroImg.alt = C.intro.heroImageAlt;
+      }
+
+      // Overview (4 steps)
+      if (C.overview) {
+        setText("overviewTitle", C.overview.title);
+        setText("overviewSubtitle", C.overview.subtitle);
+
+        const stepsRow = document.getElementById("stepsRow");
+        if (stepsRow && Array.isArray(C.overview.steps)) {
+          stepsRow.innerHTML = C.overview.steps.slice(0, 4).map(step => `
+            <div class="col">
+              <div class="text-center h-100 px-2">
+                <img src="${step.image || ""}" alt="${step.title || ""}" class="circle-img">
+                <p class="tutorial-title mt-2 mb-1">${step.title || ""}</p>
+                <p class="tutorial-text text-muted mb-0">${step.text || ""}</p>
+              </div>
+            </div>
+          `).join("");
+        }
+      }
+
+      // Basic section (4 modules)
+      if (C.basic) {
+        setText("basicTitle", C.basic.title);
+        setText("basicSubtitle", C.basic.subtitle);
+
+        const wrap = document.getElementById("modulesContainer");
+        const modules = Array.isArray(C.basic.modules) ? C.basic.modules.slice(0, 4) : [];
+
+        if (wrap) {
+          wrap.innerHTML = modules.map((m, i) => {
+            const bullets = Array.isArray(m.bullets) ? m.bullets : [];
+            const bulletHtml = bullets.map(b => `<li>${b.text || ""}</li>`).join("");
+
+            // Alternate image/text alignment on large screens
+            const textColOrder = (i % 2 === 1) ? "order-lg-2" : "";
+            const imgColOrder  = (i % 2 === 1) ? "order-lg-1" : "";
+
+            return `
+              <div class="row gy-4 mb-5">
+                <div class="col-lg-6 ${textColOrder} tutorial-text-col">
+                  <div>
+                    <div class="little-star mb-2">*</div>
+                    <h3 class="h4 mb-3">${m.title || ""}</h3>
+                    <ul class="check-list">
+                      ${bulletHtml}
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-6 ${imgColOrder}">
+                  <img src="${m.image || ""}" alt="${m.title || ""}" class="img-fluid tutorial-large-img">
+                </div>
+              </div>
+            `;
+          }).join("");
+        }
+      }
+    </script>
   </body>
 </html>
