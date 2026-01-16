@@ -42,22 +42,22 @@ window.SITE_CONFIG = {
       {
         title: "Step 1: Computer Vision",
         text: "Detect, track, and count road users from videos (vehicles, pedestrians, cyclists).",
-        image: "assets/img/image1.jpg"
+        image: "assets/img/image3.jpg"
       },
       {
         title: "Step 2: Traffic Simulation",
         text: "Build and calibrate a traffic model (SUMO/VISSIM/Aimsun) using the observed data.",
-        image: "assets/img/image2.jpg"
+        image: "assets/img/image4.jpg"
       },
       {
         title: "Step 3: Optimization",
         text: "Improve signal timing / network control using optimization or reinforcement learning.",
-        image: "assets/img/image3.jpg"
+        image: "assets/img/image5.jpg"
       },
       {
         title: "Step 4: Decision-Making",
         text: "Compare scenarios with KPIs and recommend actions for a real-world problem.",
-        image: "assets/img/image4.jpg"
+        image: "assets/img/image6.jpg"
       }
     ]
   },
@@ -75,7 +75,7 @@ window.SITE_CONFIG = {
           { text: "Detector/tracker pipeline (YOLO, ByteTrack, etc.)" },
           { text: "Outputs: counts, trajectories, speed, conflicts" }
         ],
-        image: "assets/img/image1.jpg"
+        image: "assets/img/image3.jpg"
       },
       {
         title: "Module 2: Simulation Model",
@@ -84,7 +84,7 @@ window.SITE_CONFIG = {
           { text: "Calibration and validation (GEH, travel time, queues)" },
           { text: "Baseline scenario results" }
         ],
-        image: "assets/img/image2.jpg"
+        image: "assets/img/image4.jpg"
       },
       {
         title: "Module 3: Optimization / Control",
@@ -93,7 +93,7 @@ window.SITE_CONFIG = {
           { text: "Decision variables (cycle, split, offset, phases)" },
           { text: "Before vs after KPI comparison" }
         ],
-        image: "assets/img/image3.jpg"
+        image: "assets/img/image5.jpg"
       },
       {
         title: "Module 4: Findings & Recommendation",
@@ -102,7 +102,7 @@ window.SITE_CONFIG = {
           { text: "Implementation notes (constraints, feasibility)" },
           { text: "Future work and limitations" }
         ],
-        image: "assets/img/image4.jpg"
+        image: "assets/img/image6.jpg"
       }
     ]
   }
