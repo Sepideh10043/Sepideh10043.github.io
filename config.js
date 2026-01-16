@@ -8,11 +8,11 @@ window.SITE_CONFIG = {
 
   // Top black banner
   hero: {
-    quoteHtml: "“Let’s Grow Together<br>One Heart, One Community”",
+    quoteHtml: "“Your Slogen”",
     profileImage: "assets/img/image1.jpg", // student photo
     studentName: "Your Name",
-    program: "Program / Lab / Department",
-    university: "York University, Canada",
+    program: "Program / Department",
+    university: "Your University, Canada",
     email: "your.email@example.com"
   },
 
@@ -26,36 +26,36 @@ window.SITE_CONFIG = {
 
   // Main heading + big image
   intro: {
-    title: "Open Learning Materials for Simulation of Urban Mobility (SUMO)",
+    title: "Digital Twin for Smart City",
     subtitle:
-      "SUMO Traffic Simulator tutorials from quick start and traffic signals to reinforcement learning, energy & emissions, and immersive VR-based traffic studies.",
+      "Learn the full digital-twin pipeline: extract real-world traffic data with computer vision, model networks/signals/demand in SUMO, and evaluate smart-city strategies through simulation.",
     heroImage: "assets/img/image2.jpg", // big banner image
     heroImageAlt: "Project showcase image"
   },
 
-  // Tutorials at One Glance (4 circles)
+  // Digital Twins for Smart Cities (4 circles)
   overview: {
-    title: "Tutorials at One Glance",
+    title: "Digital Twins for Smart Cities",
     subtitle:
-      "A 4-step Digital Twin pipeline: sensing → modeling → optimizing → deciding.",
+      "A 4-step Digital Twin pipeline: Sensing → Simulating → Optimizing → Deciding.",
     steps: [
       {
-        title: "Step 1: Computer Vision",
-        text: "Detect, track, and count road users from videos (vehicles, pedestrians, cyclists).",
+        title: "Step 1: Sensing (Computer Vision)",
+        text: "Detect, track, and count vehicles from videos.",
         image: "assets/img/image3.jpg"
       },
       {
-        title: "Step 2: Traffic Simulation",
-        text: "Build and calibrate a traffic model (SUMO/VISSIM/Aimsun) using the observed data.",
+        title: "Step 2: Simulating (Traffic Simulation)",
+        text: "Build and calibrate a traffic simulation model (SUMO) using the observed data.",
         image: "assets/img/image4.jpg"
       },
       {
-        title: "Step 3: Optimization",
-        text: "Improve signal timing / network control using optimization or reinforcement learning.",
+        title: "Step 3: Optimizing (Measuring System Performance)",
+        text: "Improve signal timing / network control using optimization algorithm.",
         image: "assets/img/image5.jpg"
       },
       {
-        title: "Step 4: Decision-Making",
+        title: "Step 4: Deciding (Visualization for Decision-Making)",
         text: "Compare scenarios with KPIs and recommend actions for a real-world problem.",
         image: "assets/img/image6.jpg"
       }
@@ -64,12 +64,12 @@ window.SITE_CONFIG = {
 
   // SUMO Basic Tutorials (keep heading, but reduce to 4 blocks)
   basic: {
-    title: "SUMO Basic Tutorials",
+    title: "Video Demonstration",
     subtitle:
-      "Showcase four key modules of your project. Keep it short, clear, and visual.",
+      "Showcasing 1-min video for each step",
     modules: [
       {
-        title: "Module 1: Computer Vision Setup",
+        title: "Module 1: Sensing",
         bullets: [
           { text: "Data collection and annotation strategy" },
           { text: "Detector/tracker pipeline (YOLO, ByteTrack, etc.)" },
@@ -78,7 +78,7 @@ window.SITE_CONFIG = {
         image: "assets/img/image3.jpg"
       },
       {
-        title: "Module 2: Simulation Model",
+        title: "Module 2: Simulating",
         bullets: [
           { text: "Network building (geometry, lanes, routes)" },
           { text: "Calibration and validation (GEH, travel time, queues)" },
@@ -87,16 +87,16 @@ window.SITE_CONFIG = {
         image: "assets/img/image4.jpg"
       },
       {
-        title: "Module 3: Optimization / Control",
+        title: "Module 3: Optimizing",
         bullets: [
-          { text: "Webster / GA / PSO / RL approach" },
+          { text: "Webster approach" },
           { text: "Decision variables (cycle, split, offset, phases)" },
           { text: "Before vs after KPI comparison" }
         ],
         image: "assets/img/image5.jpg"
       },
       {
-        title: "Module 4: Findings & Recommendation",
+        title: "Module 4: Deciding",
         bullets: [
           { text: "Best scenario summary (what changed and why)" },
           { text: "Implementation notes (constraints, feasibility)" },
