@@ -22,8 +22,8 @@ window.SITE_CONFIG = {
     heroText: "#ffffff",
 
     // Page + accent
-    pageBg: "#fafafa",
-    accent: "#0ea5a6",
+    pageBg: "#1d4ed8",
+    accent: "#2563eb",
 
     // NEW: Star divider bars
     dividerBg: "#111111",
