@@ -13,21 +13,21 @@
 
     <style>
       :root{
-        /* Existing */
         --hero-bg: #111;
         --hero-fg: #fff;
+
+        /* Page + accent (set by config.js) */
         --page-bg: #fafafa;
         --accent: #0ea5a6;
 
-        /* NEW: Divider + Footer controlled from config.js */
+        /* NEW: Star divider bars (set by config.js) */
         --divider-bg: #111;
         --divider-fg: #fff;
 
+        /* NEW: Footer (set by config.js) */
         --footer-bg: #111;
         --footer-fg: #fff;
         --footer-border: #222;
-        --footer-link: #fff;
-        --footer-link-hover: var(--accent);
       }
 
       body {
@@ -36,7 +36,8 @@
         background-color: var(--page-bg);
       }
 
-      a { color: var(--accent); }
+      /* Force accent color everywhere (Bootstrap can override otherwise) */
+      a { color: var(--accent) !important; }
       a:hover { opacity: 0.85; }
 
       /* Top quote banner */
@@ -63,6 +64,10 @@
         margin: 0 auto;
       }
 
+      /* Use pageBg instead of hard-coded Bootstrap backgrounds */
+      .bg-white { background-color: var(--page-bg) !important; }
+      .bg-light { background-color: var(--page-bg) !important; }
+
       /* Big hero image */
       .hero-main-img {
         border-radius: 8px;
@@ -88,7 +93,7 @@
         font-size: 0.88rem;
       }
 
-      /* Divider bar between sections (NOW configurable) */
+      /* Divider bars (background + star color controlled by config.js) */
       .star-divider {
         font-size: 2rem;
         color: var(--divider-fg);
@@ -148,7 +153,7 @@
         margin: 1.5rem auto 1.5rem;
       }
 
-      /* Footer (NOW configurable) */
+      /* Footer controlled by config.js */
       footer {
         border-top: 1px solid var(--footer-border);
         background-color: var(--footer-bg);
@@ -163,12 +168,12 @@
       .footer-link {
         display: block;
         text-decoration: none;
-        color: var(--footer-link);
+        color: var(--footer-fg) !important;
         margin-bottom: 0.25rem;
       }
 
       .footer-link:hover {
-        color: var(--footer-link-hover);
+        color: var(--accent) !important;
       }
 
       /* Vertical centering in module rows */
@@ -264,11 +269,12 @@
             A 4-step Digital Twin pipeline: sensing → modeling → optimizing → deciding.
           </p>
 
+          <!-- 4 circles rendered here -->
           <div id="stepsRow" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 justify-content-center"></div>
         </div>
       </section>
 
-      <!-- SUMO BASIC TUTORIALS -->
+      <!-- SUMO BASIC TUTORIALS (4 blocks only) -->
       <div class="star-divider">*</div>
       <section id="basic" class="py-5 bg-white">
         <div class="container">
@@ -277,6 +283,7 @@
             Showcase four key modules of your project. Keep it short, clear, and visual.
           </p>
 
+          <!-- 4 module rows rendered here -->
           <div id="modulesContainer"></div>
         </div>
       </section>
@@ -338,7 +345,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"></script>
 
-    <!-- Config -->
+    <!-- Config (students edit config.js only) -->
     <script src="config.js"></script>
 
     <!-- Apply config -->
@@ -351,16 +358,19 @@
         document.documentElement.style.setProperty("--hero-fg",  C.theme.heroText || "#fff");
         document.documentElement.style.setProperty("--page-bg",  C.theme.pageBg  || "#fafafa");
         document.documentElement.style.setProperty("--accent",   C.theme.accent  || "#0ea5a6");
+      }
 
-        // NEW: Divider + Footer colors
-        document.documentElement.style.setProperty("--divider-bg", C.theme.dividerBg || "#111");
-        document.documentElement.style.setProperty("--divider-fg", C.theme.dividerText || "#fff");
+      // NEW: Divider bars
+      if (C.dividers) {
+        document.documentElement.style.setProperty("--divider-bg", C.dividers.dividerBg || "#111");
+        document.documentElement.style.setProperty("--divider-fg", C.dividers.dividerText || "#fff");
+      }
 
-        document.documentElement.style.setProperty("--footer-bg", C.theme.footerBg || "#111");
-        document.documentElement.style.setProperty("--footer-fg", C.theme.footerText || "#fff");
-        document.documentElement.style.setProperty("--footer-border", C.theme.footerBorder || "#222");
-        document.documentElement.style.setProperty("--footer-link", C.theme.footerLink || "#fff");
-        document.documentElement.style.setProperty("--footer-link-hover", C.theme.footerLinkHover || (C.theme.accent || "#0ea5a6"));
+      // NEW: Footer colors
+      if (C.footer) {
+        document.documentElement.style.setProperty("--footer-bg",     C.footer.footerBg || "#111");
+        document.documentElement.style.setProperty("--footer-fg",     C.footer.footerText || "#fff");
+        document.documentElement.style.setProperty("--footer-border", C.footer.footerBorder || "#222");
       }
 
       // Page title
@@ -375,7 +385,7 @@
         if (el && val !== undefined && val !== null) el.innerHTML = val;
       };
 
-      // Brand link
+      // Brand link (back to RoadwayVR.com)
       const brandLink = document.getElementById("brandLink");
       if (brandLink) {
         brandLink.textContent = C.navBrand || "Student Showcase";
