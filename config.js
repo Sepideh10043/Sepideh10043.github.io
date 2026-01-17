@@ -23,8 +23,8 @@ window.SITE_CONFIG = {
 
   // NEW: Star divider bars
   dividers: {
-    dividerBg: "#f9f9f9",   // background (slight grey-white)
-    dividerText: "#ffffff"  // star (pure white)
+    dividerBg: "#f8fafc",   // soft white
+    dividerText: "#94a3b8", // grey star
   },
 
   // NEW: Footer colors
