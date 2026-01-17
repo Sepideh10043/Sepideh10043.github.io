@@ -57,10 +57,47 @@ window.SITE_CONFIG = {
     title: "Video Demonstration",
     subtitle: "Showcasing 1-min video for each step",
     modules: [
-      { title: "Module 1: Sensing (See Video)", bullets: [{text:"Data collection and annotation strategy"},{text:"Detector/tracker pipeline (YOLO, ByteTrack, etc.)"},{text:"Outputs: counts, trajectories, speed, conflicts"}], image: "assets/img/image3.jpg" },
-      { title: "Module 2: Simulating (See Video)", bullets: [{text:"Network building (geometry, lanes, routes)"},{text:"Calibration and validation (GEH, travel time, queues)"},{text:"Baseline scenario results"}], image: "assets/img/image4.jpg" },
-      { title: "Module 3: Optimizing (See Video)", bullets: [{text:"Webster approach"},{text:"Decision variables (cycle, split, offset, phases)"},{text:"Before vs after KPI comparison"}], image: "assets/img/image5.jpg" },
-      { title: "Module 4: Deciding (See Video)", bullets: [{text:"Best scenario summary (what changed and why)"},{text:"Implementation notes (constraints, feasibility)"},{text:"Future work and limitations"}], image: "assets/img/image6.jpg" }
+      {
+        title: "Module 1: Sensing",
+        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
+        bullets: [
+          {text:"Data collection and annotation strategy"},
+          {text:"Detector/tracker pipeline (YOLO, ByteTrack, etc.)"},
+          {text:"Outputs: counts, trajectories, speed, conflicts"}
+        ],
+        image: "assets/img/image3.jpg"
+      },
+      {
+        title: "Module 2: Simulating",
+        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
+        bullets: [
+          {text:"Network building (geometry, lanes, routes)"},
+          {text:"Calibration and validation (GEH, travel time, queues)"},
+          {text:"Baseline scenario results"}
+        ],
+        image: "assets/img/image4.jpg"
+      },
+      {
+        title: "Module 3: Optimizing",
+        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
+        bullets: [
+          {text:"Webster approach"},
+          {text:"Decision variables (cycle, split, offset, phases)"},
+          {text:"Before vs after KPI comparison"}
+        ],
+        image: "assets/img/image5.jpg"
+      },
+      {
+        title: "Module 4: Deciding",
+        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
+        bullets: [
+          {text:"Best scenario summary (what changed and why)"},
+          {text:"Implementation notes (constraints, feasibility)"},
+          {text:"Future work and limitations"}
+        ],
+        image: "assets/img/image6.jpg"
+      }
     ]
+
   }
 };
