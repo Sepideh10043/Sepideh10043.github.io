@@ -98,6 +98,5 @@ window.SITE_CONFIG = {
         image: "assets/img/image6.jpg"
       }
     ]
-
   }
 };
