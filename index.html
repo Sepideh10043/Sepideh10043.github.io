@@ -15,18 +15,15 @@
       :root{
         --hero-bg: #111;
         --hero-fg: #fff;
-
-        /* Page + accent (set by config.js) */
         --page-bg: #fafafa;
         --accent: #0ea5a6;
 
-        /* NEW: Star divider bars (set by config.js) */
-        --divider-bg: #111;
-        --divider-fg: #fff;
+        /* NEW: divider + footer vars */
+        --divider-bg: #f9f9f9;
+        --divider-text: #ffffff;
 
-        /* NEW: Footer (set by config.js) */
         --footer-bg: #111;
-        --footer-fg: #fff;
+        --footer-text: #fff;
         --footer-border: #222;
       }
 
@@ -36,8 +33,7 @@
         background-color: var(--page-bg);
       }
 
-      /* Force accent color everywhere (Bootstrap can override otherwise) */
-      a { color: var(--accent) !important; }
+      a { color: var(--accent); }
       a:hover { opacity: 0.85; }
 
       /* Top quote banner */
@@ -64,10 +60,6 @@
         margin: 0 auto;
       }
 
-      /* Use pageBg instead of hard-coded Bootstrap backgrounds */
-      .bg-white { background-color: var(--page-bg) !important; }
-      .bg-light { background-color: var(--page-bg) !important; }
-
       /* Big hero image */
       .hero-main-img {
         border-radius: 8px;
@@ -93,10 +85,10 @@
         font-size: 0.88rem;
       }
 
-      /* Divider bars (background + star color controlled by config.js) */
+      /* Divider bar */
       .star-divider {
         font-size: 2rem;
-        color: var(--divider-fg);
+        color: var(--divider-text);
         background: var(--divider-bg);
         text-align: center;
         padding: 1.25rem 0;
@@ -142,7 +134,7 @@
         font-weight: 700;
       }
 
-      /* Portrait photo */
+      /* Portrait image */
       .hero-photo {
         width: 120px;
         height: 120px;
@@ -153,11 +145,11 @@
         margin: 1.5rem auto 1.5rem;
       }
 
-      /* Footer controlled by config.js */
+      /* Footer */
       footer {
         border-top: 1px solid var(--footer-border);
         background-color: var(--footer-bg);
-        color: var(--footer-fg);
+        color: var(--footer-text);
       }
 
       .footer-title {
@@ -168,12 +160,12 @@
       .footer-link {
         display: block;
         text-decoration: none;
-        color: var(--footer-fg) !important;
+        color: var(--footer-text);
         margin-bottom: 0.25rem;
       }
 
       .footer-link:hover {
-        color: var(--accent) !important;
+        color: var(--accent);
       }
 
       /* Vertical centering in module rows */
@@ -194,6 +186,13 @@
         text-decoration: none;
       }
       .brand-link:hover { opacity: 0.9; }
+
+      /* Video link styling */
+      .video-link {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        text-decoration: underline;
+      }
     </style>
   </head>
 
@@ -201,7 +200,6 @@
     <!-- TOP BLACK BANNER -->
     <header id="top" class="hero-banner text-center py-5">
       <div class="container">
-
         <!-- Student Showcase link back to roadwayvr.com -->
         <div class="mb-3">
           <a id="brandLink"
@@ -269,26 +267,24 @@
             A 4-step Digital Twin pipeline: sensing → modeling → optimizing → deciding.
           </p>
 
-          <!-- 4 circles rendered here -->
           <div id="stepsRow" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 justify-content-center"></div>
         </div>
       </section>
 
-      <!-- SUMO BASIC TUTORIALS (4 blocks only) -->
+      <!-- BASIC (4 modules) -->
       <div class="star-divider">*</div>
       <section id="basic" class="py-5 bg-white">
         <div class="container">
-          <h2 class="section-title h3 text-center mb-3" id="basicTitle">SUMO Basic Tutorials</h2>
+          <h2 class="section-title h3 text-center mb-3" id="basicTitle">Video Demonstration</h2>
           <p class="text-center mb-5 section-subtitle" id="basicSubtitle">
-            Showcase four key modules of your project. Keep it short, clear, and visual.
+            Showcasing 1-min video for each step
           </p>
 
-          <!-- 4 module rows rendered here -->
           <div id="modulesContainer"></div>
         </div>
       </section>
 
-      <!-- ABOUT SECTION -->
+      <!-- ABOUT -->
       <div class="star-divider">*</div>
       <section id="about" class="py-5 bg-light">
         <div class="container">
@@ -345,14 +341,14 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"></script>
 
-    <!-- Config (students edit config.js only) -->
+    <!-- Config -->
     <script src="config.js"></script>
 
     <!-- Apply config -->
     <script>
       const C = window.SITE_CONFIG || {};
 
-      // Theme
+      // Theme vars
       if (C.theme) {
         document.documentElement.style.setProperty("--hero-bg",  C.theme.heroBg  || "#111");
         document.documentElement.style.setProperty("--hero-fg",  C.theme.heroText || "#fff");
@@ -360,16 +356,16 @@
         document.documentElement.style.setProperty("--accent",   C.theme.accent  || "#0ea5a6");
       }
 
-      // NEW: Divider bars
+      // Divider vars
       if (C.dividers) {
-        document.documentElement.style.setProperty("--divider-bg", C.dividers.dividerBg || "#111");
-        document.documentElement.style.setProperty("--divider-fg", C.dividers.dividerText || "#fff");
+        document.documentElement.style.setProperty("--divider-bg",   C.dividers.dividerBg   || "#f9f9f9");
+        document.documentElement.style.setProperty("--divider-text", C.dividers.dividerText || "#ffffff");
       }
 
-      // NEW: Footer colors
+      // Footer vars
       if (C.footer) {
-        document.documentElement.style.setProperty("--footer-bg",     C.footer.footerBg || "#111");
-        document.documentElement.style.setProperty("--footer-fg",     C.footer.footerText || "#fff");
+        document.documentElement.style.setProperty("--footer-bg",     C.footer.footerBg     || "#111");
+        document.documentElement.style.setProperty("--footer-text",   C.footer.footerText   || "#fff");
         document.documentElement.style.setProperty("--footer-border", C.footer.footerBorder || "#222");
       }
 
@@ -392,10 +388,9 @@
         brandLink.href = C.homeUrl || "https://roadwayvr.com";
       }
 
-      // Hero banner
+      // Hero
       if (C.hero) {
         setHTML("heroQuote", C.hero.quoteHtml);
-
         setText("studentNameLine", C.hero.studentName ? `Student: ${C.hero.studentName}` : "");
         setText("studentAffilLine", [C.hero.program, C.hero.university].filter(Boolean).join(", "));
 
@@ -420,7 +415,7 @@
         if (introHeroImg && C.intro.heroImageAlt) introHeroImg.alt = C.intro.heroImageAlt;
       }
 
-      // Overview (4 steps)
+      // Overview steps
       if (C.overview) {
         setText("overviewTitle", C.overview.title);
         setText("overviewSubtitle", C.overview.subtitle);
@@ -439,7 +434,7 @@
         }
       }
 
-      // Basic section (4 modules)
+      // Modules (with See video link)
       if (C.basic) {
         setText("basicTitle", C.basic.title);
         setText("basicSubtitle", C.basic.subtitle);
@@ -455,12 +450,17 @@
             const textColOrder = (i % 2 === 1) ? "order-lg-2" : "";
             const imgColOrder  = (i % 2 === 1) ? "order-lg-1" : "";
 
+            const videoHtml = m.videoUrl
+              ? `<a class="video-link" href="${m.videoUrl}" target="_blank" rel="noopener noreferrer">See video</a>`
+              : "";
+
             return `
               <div class="row gy-4 mb-5">
                 <div class="col-lg-6 ${textColOrder} tutorial-text-col">
                   <div>
                     <div class="little-star mb-2">*</div>
-                    <h3 class="h4 mb-3">${m.title || ""}</h3>
+                    <h3 class="h4 mb-2">${m.title || ""}</h3>
+                    ${videoHtml}
                     <ul class="check-list">
                       ${bulletHtml}
                     </ul>
