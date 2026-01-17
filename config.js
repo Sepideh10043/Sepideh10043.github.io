@@ -23,8 +23,8 @@ window.SITE_CONFIG = {
 
   // NEW: Star divider bars
   dividers: {
-    dividerBg: "#f8fafc",     // bar background
-    dividerText: "#94a3b8"    // star color
+    dividerBg: "#f9f9f9",   // background (slight grey-white)
+    dividerText: "#ffffff"  // star (pure white)
   },
 
   // NEW: Footer colors
@@ -57,10 +57,10 @@ window.SITE_CONFIG = {
     title: "Video Demonstration",
     subtitle: "Showcasing 1-min video for each step",
     modules: [
-      { title: "Module 1: Sensing", bullets: [{text:"Data collection and annotation strategy"},{text:"Detector/tracker pipeline (YOLO, ByteTrack, etc.)"},{text:"Outputs: counts, trajectories, speed, conflicts"}], image: "assets/img/image3.jpg" },
-      { title: "Module 2: Simulating", bullets: [{text:"Network building (geometry, lanes, routes)"},{text:"Calibration and validation (GEH, travel time, queues)"},{text:"Baseline scenario results"}], image: "assets/img/image4.jpg" },
-      { title: "Module 3: Optimizing", bullets: [{text:"Webster approach"},{text:"Decision variables (cycle, split, offset, phases)"},{text:"Before vs after KPI comparison"}], image: "assets/img/image5.jpg" },
-      { title: "Module 4: Deciding", bullets: [{text:"Best scenario summary (what changed and why)"},{text:"Implementation notes (constraints, feasibility)"},{text:"Future work and limitations"}], image: "assets/img/image6.jpg" }
+      { title: "Module 1: Sensing (See Video)", bullets: [{text:"Data collection and annotation strategy"},{text:"Detector/tracker pipeline (YOLO, ByteTrack, etc.)"},{text:"Outputs: counts, trajectories, speed, conflicts"}], image: "assets/img/image3.jpg" },
+      { title: "Module 2: Simulating (See Video)", bullets: [{text:"Network building (geometry, lanes, routes)"},{text:"Calibration and validation (GEH, travel time, queues)"},{text:"Baseline scenario results"}], image: "assets/img/image4.jpg" },
+      { title: "Module 3: Optimizing (See Video)", bullets: [{text:"Webster approach"},{text:"Decision variables (cycle, split, offset, phases)"},{text:"Before vs after KPI comparison"}], image: "assets/img/image5.jpg" },
+      { title: "Module 4: Deciding (See Video)", bullets: [{text:"Best scenario summary (what changed and why)"},{text:"Implementation notes (constraints, feasibility)"},{text:"Future work and limitations"}], image: "assets/img/image6.jpg" }
     ]
   }
 };
