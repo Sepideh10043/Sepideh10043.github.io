@@ -26,7 +26,7 @@ window.SITE_CONFIG = {
     accent: "#2563eb",
 
     // NEW: Star divider bars
-    dividerBg: "#111111",
+    dividerBg: "#ffffff",
     dividerText: "#ffffff",
 
     // NEW: Footer
