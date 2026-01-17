@@ -1,72 +1,65 @@
 // config.js  (Students edit only this file)
 window.SITE_CONFIG = {
-  // Browser tab title
   pageTitle: "Digital Twin Student Showcase",
 
-  // Navbar
+  // Brand text + link
   navBrand: "Student Showcase",
+  homeUrl: "https://roadwayvr.com",
 
-  // Top black banner
   hero: {
-    quoteHtml: "“Your Slogen”",
-    profileImage: "assets/img/image1.jpg", // student photo
+    quoteHtml: "“Your Slogan”",
+    profileImage: "assets/img/image1.jpg",
     studentName: "Your Name",
     program: "Program / Department",
     university: "Your University, Canada",
     email: "your.email@example.com"
   },
 
-  // Theme colors
+  // Theme colors (NOW includes divider + footer)
   theme: {
+    // Top banner
     heroBg: "#111111",
     heroText: "#ffffff",
+
+    // Page + accent
     pageBg: "#fafafa",
-    accent: "#0ea5a6"
+    accent: "#0ea5a6",
+
+    // NEW: Star divider bars
+    dividerBg: "#111111",
+    dividerText: "#ffffff",
+
+    // NEW: Footer
+    footerBg: "#111111",
+    footerText: "#ffffff",
+    footerBorder: "#222222",
+    footerLink: "#ffffff",
+    footerLinkHover: "#0ea5a6"
   },
 
-  // Main heading + big image
   intro: {
     title: "Digital Twin for Smart City",
     subtitle:
       "Learn the full digital-twin pipeline: extract real-world traffic data with computer vision, model networks/signals/demand in SUMO, and evaluate smart-city strategies through simulation.",
-    heroImage: "assets/img/image2.jpg", // big banner image
+    heroImage: "assets/img/image2.jpg",
     heroImageAlt: "Project showcase image"
   },
 
-  // Digital Twins for Smart Cities (4 circles)
   overview: {
     title: "Digital Twins for Smart Cities",
     subtitle:
       "A 4-step Digital Twin pipeline: Sensing → Simulating → Optimizing → Deciding.",
     steps: [
-      {
-        title: "Step 1: Sensing (Computer Vision)",
-        text: "Detect, track, and count vehicles from videos.",
-        image: "assets/img/image3.jpg"
-      },
-      {
-        title: "Step 2: Simulating (Traffic Simulation)",
-        text: "Build and calibrate a traffic simulation model (SUMO) using the observed data.",
-        image: "assets/img/image4.jpg"
-      },
-      {
-        title: "Step 3: Optimizing (Measuring System Performance)",
-        text: "Improve signal timing / network control using optimization algorithm.",
-        image: "assets/img/image5.jpg"
-      },
-      {
-        title: "Step 4: Deciding (Visualization for Decision-Making)",
-        text: "Compare scenarios with KPIs and recommend actions for a real-world problem.",
-        image: "assets/img/image6.jpg"
-      }
+      { title: "Step 1: Sensing (Computer Vision)", text: "Detect, track, and count vehicles from videos.", image: "assets/img/image3.jpg" },
+      { title: "Step 2: Simulating (Traffic Simulation)", text: "Build and calibrate a traffic simulation model (SUMO) using the observed data.", image: "assets/img/image4.jpg" },
+      { title: "Step 3: Optimizing (Measuring System Performance)", text: "Improve signal timing / network control using optimization algorithm.", image: "assets/img/image5.jpg" },
+      { title: "Step 4: Deciding (Visualization for Decision-Making)", text: "Compare scenarios with KPIs and recommend actions for a real-world problem.", image: "assets/img/image6.jpg" }
     ]
   },
 
-  // SUMO Basic Tutorials (keep heading, but reduce to 4 blocks)
   basic: {
     title: "Video Demonstration",
-    subtitle:
-      "Showcasing 1-min video for each step",
+    subtitle: "Showcasing 1-min video for each step",
     modules: [
       {
         title: "Module 1: Sensing",
