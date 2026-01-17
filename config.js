@@ -14,19 +14,19 @@ window.SITE_CONFIG = {
   },
 
   theme: {
-    heroBg: "#06283d",
-    heroText: "#ffffff",
-    pageBg: "#f1f5f9",
-    accent: "#0891b2"
+    heroBg: "#0b1020",
+    heroText: "#e2e8f0",
+    pageBg: "#0f172a",
+    accent: "#38bdf8"
   },
   dividers: {
-    dividerBg: "#e2e8f0",
-    dividerText: "#0f172a"
+    dividerBg: "#111827",
+    dividerText: "#e2e8f0"
   },
   footer: {
-    footerBg: "#041c2c",
-    footerText: "#ffffff",
-    footerBorder: "#0b2a3a"
+    footerBg: "#0b1020",
+    footerText: "#e2e8f0",
+    footerBorder: "#1f2937"
   },
 
 
