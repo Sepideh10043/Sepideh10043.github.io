@@ -13,22 +13,26 @@ window.SITE_CONFIG = {
     email: "your.email@example.com"
   },
 
+  // Theme colors
   theme: {
-    heroBg: "#0b1020",
-    heroText: "#e2e8f0",
-    pageBg: "#0f172a",
-    accent: "#38bdf8"
-  },
-  dividers: {
-    dividerBg: "#111827",
-    dividerText: "#e2e8f0"
-  },
-  footer: {
-    footerBg: "#0b1020",
-    footerText: "#e2e8f0",
-    footerBorder: "#1f2937"
+    heroBg: "#111111",
+    heroText: "#ffffff",
+    pageBg: "#f8fafc",
+    accent: "#7c3aed"
   },
 
+  // NEW: Star divider bars
+  dividers: {
+    dividerBg: "#f8fafc",     // bar background
+    dividerText: "#94a3b8"    // star color
+  },
+
+  // NEW: Footer colors
+  footer: {
+    footerBg: "#111111",
+    footerText: "#ffffff",
+    footerBorder: "#222222"
+  },
 
   intro: {
     title: "Digital Twin for Smart City",
