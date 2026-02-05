@@ -18,7 +18,7 @@
         --page-bg: #fafafa;
         --accent: #0ea5a6;
 
-        /* NEW: divider + footer vars */
+        /* divider + footer vars */
         --divider-bg: #f9f9f9;
         --divider-text: #ffffff;
 
@@ -60,12 +60,11 @@
         margin: 0 auto;
       }
 
-      /* Big hero video */
-      .hero-main-video {
+      /* Big hero media (image/video) */
+      .hero-main-img {
         border-radius: 8px;
         box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
-        width: 100%;
-        max-height: 500px;
+        background: #000; /* helps if video hasn't loaded yet */
       }
 
       /* Circle images */
@@ -188,6 +187,13 @@
         text-decoration: none;
       }
       .brand-link:hover { opacity: 0.9; }
+
+      /* Video link styling */
+      .video-link {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        text-decoration: underline;
+      }
     </style>
   </head>
 
@@ -195,7 +201,6 @@
     <!-- TOP BLACK BANNER -->
     <header id="top" class="hero-banner text-center py-5">
       <div class="container">
-        <!-- Student Showcase link back to roadwayvr.com -->
         <div class="mb-3">
           <a id="brandLink"
              class="brand-link text-white"
@@ -207,7 +212,7 @@
         </div>
 
         <p class="hero-quote mb-3" id="heroQuote">
-          "Let's Grow Together<br>One Heart, One Community"
+          “Let’s Grow Together<br>One Heart, One Community”
         </p>
 
         <img
@@ -243,11 +248,15 @@
 
           <div class="row justify-content-center">
             <div class="col-md-8">
+              <!-- NEW: video replaces image2.jpg -->
               <video
                 id="introHeroVideo"
-                class="hero-main-video"
+                class="w-100 hero-main-img"
                 controls
-                preload="metadata">
+                muted
+                playsinline
+                preload="metadata"
+                aria-label="Project showcase video">
                 <source src="assets/video/video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -273,9 +282,9 @@
       <div class="star-divider">*</div>
       <section id="basic" class="py-5 bg-white">
         <div class="container">
-          <h2 class="section-title h3 text-center mb-3" id="basicTitle">Project Steps</h2>
+          <h2 class="section-title h3 text-center mb-3" id="basicTitle">Video Demonstration</h2>
           <p class="text-center mb-5 section-subtitle" id="basicSubtitle">
-            Detailed breakdown of each step in the digital twin pipeline
+            Showcasing 1-min video for each step
           </p>
 
           <div id="modulesContainer"></div>
@@ -379,7 +388,7 @@
         if (el && val !== undefined && val !== null) el.innerHTML = val;
       };
 
-      // Brand link (back to RoadwayVR.com)
+      // Brand link
       const brandLink = document.getElementById("brandLink");
       if (brandLink) {
         brandLink.textContent = C.navBrand || "Student Showcase";
@@ -403,15 +412,16 @@
         if (profileImg && C.hero.studentName) profileImg.alt = `Image for ${C.hero.studentName}`;
       }
 
-      // Intro (now with video)
+      // Intro (VIDEO)
       if (C.intro) {
         setText("introTitle", C.intro.title);
         setText("introSubtitle", C.intro.subtitle);
 
         const introHeroVideo = document.getElementById("introHeroVideo");
-        if (introHeroVideo && C.intro.heroVideo) {
-          introHeroVideo.querySelector('source').src = C.intro.heroVideo;
-          introHeroVideo.load();
+        if (introHeroVideo) {
+          if (C.intro.heroVideo) introHeroVideo.src = C.intro.heroVideo;
+          if (C.intro.heroVideoPoster) introHeroVideo.poster = C.intro.heroVideoPoster;
+          if (C.intro.heroVideoAlt) introHeroVideo.setAttribute("aria-label", C.intro.heroVideoAlt);
         }
       }
 
@@ -434,7 +444,7 @@
         }
       }
 
-      // Modules (without video links)
+      // Modules (with See video link)
       if (C.basic) {
         setText("basicTitle", C.basic.title);
         setText("basicSubtitle", C.basic.subtitle);
@@ -450,12 +460,17 @@
             const textColOrder = (i % 2 === 1) ? "order-lg-2" : "";
             const imgColOrder  = (i % 2 === 1) ? "order-lg-1" : "";
 
+            const videoHtml = m.videoUrl
+              ? `<a class="video-link" href="${m.videoUrl}" target="_blank" rel="noopener noreferrer">See video</a>`
+              : "";
+
             return `
               <div class="row gy-4 mb-5">
                 <div class="col-lg-6 ${textColOrder} tutorial-text-col">
                   <div>
                     <div class="little-star mb-2">*</div>
                     <h3 class="h4 mb-2">${m.title || ""}</h3>
+                    ${videoHtml}
                     <ul class="check-list">
                       ${bulletHtml}
                     </ul>
