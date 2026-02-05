@@ -3,16 +3,14 @@ window.SITE_CONFIG = {
   pageTitle: "Digital Twin Student Showcase",
   navBrand: "Student Showcase",
   homeUrl: "https://roadwayvr.com",
-
   hero: {
-    quoteHtml: "“Your Slogan”",
+    quoteHtml: ""Your Slogan"",
     profileImage: "assets/img/image1.jpg", // can be student photo OR logo
     studentName: "Your Name",
     program: "Program / Department",
     university: "Your University, Canada",
     email: "your.email@example.com"
   },
-
   // Theme colors
   theme: {
     heroBg: "#111111",
@@ -20,28 +18,24 @@ window.SITE_CONFIG = {
     pageBg: "#f8fafc",
     accent: "#7c3aed"
   },
-
   // Star divider bars
   dividers: {
     dividerBg: "#f9f9f9",   // bar background (slight grey-white)
     dividerText: "#ffffff"  // star color (pure white)
   },
-
   // Footer colors
   footer: {
     footerBg: "#111111",
     footerText: "#ffffff",
     footerBorder: "#222222"
   },
-
   intro: {
     title: "Digital Twin for Smart City",
     subtitle:
       "Learn the full digital-twin pipeline: extract real-world traffic data with computer vision, model networks/signals/demand in SUMO, and evaluate smart-city strategies through simulation.",
-    heroImage: "assets/img/image2.jpg",
-    heroImageAlt: "Project showcase image"
+    heroVideo: "assets/video/video.mp4",  // Changed from heroImage to heroVideo
+    heroVideoAlt: "Project showcase video"
   },
-
   overview: {
     title: "Digital Twins for Smart Cities",
     subtitle: "A 4-step Digital Twin pipeline: Sensing → Simulating → Optimizing → Deciding.",
@@ -49,26 +43,25 @@ window.SITE_CONFIG = {
       {
         title: "Step 1: Sensing (Computer Vision)",
         text: "Detect, track, and count vehicles from videos.",
-        image: "assets/img/image3.jpg"
+        image: "assets/img/image2.jpg"  // Changed from image3.jpg
       },
       {
         title: "Step 2: Simulating (Traffic Simulation)",
         text: "Build and calibrate a traffic simulation model (SUMO) using the observed data.",
-        image: "assets/img/image4.jpg"
+        image: "assets/img/image3.jpg"  // Changed from image4.jpg
       },
       {
         title: "Step 3: Optimizing (Measuring System Performance)",
         text: "Improve signal timing / network control using optimization algorithm.",
-        image: "assets/img/image5.jpg"
+        image: "assets/img/image4.jpg"  // Changed from image5.jpg
       },
       {
         title: "Step 4: Deciding (Visualization for Decision-Making)",
         text: "Compare scenarios with KPIs and recommend actions for a real-world problem.",
-        image: "assets/img/image6.jpg"
+        image: "assets/img/image5.jpg"  // Changed from image6.jpg
       }
     ]
   },
-
   basic: {
     title: "Video Demonstration",
     subtitle: "Showcasing 1-min video for each step",
@@ -81,7 +74,7 @@ window.SITE_CONFIG = {
           { text: "Detector/tracker pipeline (YOLO, ByteTrack, etc.)" },
           { text: "Outputs: counts, trajectories, speed, conflicts" }
         ],
-        image: "assets/img/image3.jpg"
+        image: "assets/img/image2.jpg"  // Changed from image3.jpg
       },
       {
         title: "Module 2: Simulating",
@@ -91,7 +84,7 @@ window.SITE_CONFIG = {
           { text: "Calibration and validation (GEH, travel time, queues)" },
           { text: "Baseline scenario results" }
         ],
-        image: "assets/img/image4.jpg"
+        image: "assets/img/image3.jpg"  // Changed from image4.jpg
       },
       {
         title: "Module 3: Optimizing",
@@ -101,7 +94,7 @@ window.SITE_CONFIG = {
           { text: "Decision variables (cycle, split, offset, phases)" },
           { text: "Before vs after KPI comparison" }
         ],
-        image: "assets/img/image5.jpg"
+        image: "assets/img/image4.jpg"  // Changed from image5.jpg
       },
       {
         title: "Module 4: Deciding",
@@ -111,7 +104,7 @@ window.SITE_CONFIG = {
           { text: "Implementation notes (constraints, feasibility)" },
           { text: "Future work and limitations" }
         ],
-        image: "assets/img/image6.jpg"
+        image: "assets/img/image5.jpg"  // Changed from image6.jpg
       }
     ]
   }
