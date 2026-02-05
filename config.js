@@ -39,10 +39,10 @@ window.SITE_CONFIG = {
     subtitle:
       "Learn the full digital-twin pipeline: extract real-world traffic data with computer vision, model networks/signals/demand in SUMO, and evaluate smart-city strategies through simulation.",
 
-    // NEW: video instead of image2.jpg
+    // VIDEO (autoplay handled in HTML)
     heroVideo: "assets/video/video.mp4",
-    heroVideoPoster: "", // optional: e.g., "assets/img/image2.jpg" if you want a poster frame
-    heroVideoAlt: "Project showcase video"
+    heroVideoPoster: "", // optional: e.g., "assets/img/image2.jpg"
+    heroVideoAlt: "Project showcase video (autoplay)"
   },
 
   overview: {
