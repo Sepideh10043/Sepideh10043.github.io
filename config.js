@@ -33,7 +33,7 @@ window.SITE_CONFIG = {
     title: "Digital Twin for Smart City",
     subtitle:
       "Learn the full digital-twin pipeline: extract real-world traffic data with computer vision, model networks/signals/demand in SUMO, and evaluate smart-city strategies through simulation.",
-    heroVideo: "assets/video/video.mp4",  // Changed from heroImage to heroVideo
+    heroVideo: "assets/video/video.mp4",
     heroVideoAlt: "Project showcase video"
   },
   overview: {
@@ -43,68 +43,64 @@ window.SITE_CONFIG = {
       {
         title: "Step 1: Sensing (Computer Vision)",
         text: "Detect, track, and count vehicles from videos.",
-        image: "assets/img/image2.jpg"  // Changed from image3.jpg
+        image: "assets/img/image2.jpg"
       },
       {
         title: "Step 2: Simulating (Traffic Simulation)",
         text: "Build and calibrate a traffic simulation model (SUMO) using the observed data.",
-        image: "assets/img/image3.jpg"  // Changed from image4.jpg
+        image: "assets/img/image3.jpg"
       },
       {
         title: "Step 3: Optimizing (Measuring System Performance)",
         text: "Improve signal timing / network control using optimization algorithm.",
-        image: "assets/img/image4.jpg"  // Changed from image5.jpg
+        image: "assets/img/image4.jpg"
       },
       {
         title: "Step 4: Deciding (Visualization for Decision-Making)",
         text: "Compare scenarios with KPIs and recommend actions for a real-world problem.",
-        image: "assets/img/image5.jpg"  // Changed from image6.jpg
+        image: "assets/img/image5.jpg"
       }
     ]
   },
   basic: {
-    title: "Video Demonstration",
-    subtitle: "Showcasing 1-min video for each step",
+    title: "Project Steps",
+    subtitle: "Detailed breakdown of each step in the digital twin pipeline",
     modules: [
       {
         title: "Module 1: Sensing",
-        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
           { text: "Data collection and annotation strategy" },
           { text: "Detector/tracker pipeline (YOLO, ByteTrack, etc.)" },
           { text: "Outputs: counts, trajectories, speed, conflicts" }
         ],
-        image: "assets/img/image2.jpg"  // Changed from image3.jpg
+        image: "assets/img/image2.jpg"
       },
       {
         title: "Module 2: Simulating",
-        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
           { text: "Network building (geometry, lanes, routes)" },
           { text: "Calibration and validation (GEH, travel time, queues)" },
           { text: "Baseline scenario results" }
         ],
-        image: "assets/img/image3.jpg"  // Changed from image4.jpg
+        image: "assets/img/image3.jpg"
       },
       {
         title: "Module 3: Optimizing",
-        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
           { text: "Webster approach" },
           { text: "Decision variables (cycle, split, offset, phases)" },
           { text: "Before vs after KPI comparison" }
         ],
-        image: "assets/img/image4.jpg"  // Changed from image5.jpg
+        image: "assets/img/image4.jpg"
       },
       {
         title: "Module 4: Deciding",
-        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
           { text: "Best scenario summary (what changed and why)" },
           { text: "Implementation notes (constraints, feasibility)" },
           { text: "Future work and limitations" }
         ],
-        image: "assets/img/image5.jpg"  // Changed from image6.jpg
+        image: "assets/img/image5.jpg"
       }
     ]
   }
