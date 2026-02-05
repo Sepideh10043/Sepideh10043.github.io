@@ -3,14 +3,16 @@ window.SITE_CONFIG = {
   pageTitle: "Digital Twin Student Showcase",
   navBrand: "Student Showcase",
   homeUrl: "https://roadwayvr.com",
+
   hero: {
-    quoteHtml: ""Your Slogan"",
+    quoteHtml: "“Your Slogan”",
     profileImage: "assets/img/image1.jpg", // can be student photo OR logo
     studentName: "Your Name",
     program: "Program / Department",
     university: "Your University, Canada",
     email: "your.email@example.com"
   },
+
   // Theme colors
   theme: {
     heroBg: "#111111",
@@ -18,24 +20,31 @@ window.SITE_CONFIG = {
     pageBg: "#f8fafc",
     accent: "#7c3aed"
   },
+
   // Star divider bars
   dividers: {
     dividerBg: "#f9f9f9",   // bar background (slight grey-white)
     dividerText: "#ffffff"  // star color (pure white)
   },
+
   // Footer colors
   footer: {
     footerBg: "#111111",
     footerText: "#ffffff",
     footerBorder: "#222222"
   },
+
   intro: {
     title: "Digital Twin for Smart City",
     subtitle:
       "Learn the full digital-twin pipeline: extract real-world traffic data with computer vision, model networks/signals/demand in SUMO, and evaluate smart-city strategies through simulation.",
+
+    // NEW: video instead of image2.jpg
     heroVideo: "assets/video/video.mp4",
+    heroVideoPoster: "", // optional: e.g., "assets/img/image2.jpg" if you want a poster frame
     heroVideoAlt: "Project showcase video"
   },
+
   overview: {
     title: "Digital Twins for Smart Cities",
     subtitle: "A 4-step Digital Twin pipeline: Sensing → Simulating → Optimizing → Deciding.",
@@ -62,12 +71,14 @@ window.SITE_CONFIG = {
       }
     ]
   },
+
   basic: {
-    title: "Project Steps",
-    subtitle: "Detailed breakdown of each step in the digital twin pipeline",
+    title: "Video Demonstration",
+    subtitle: "Showcasing 1-min video for each step",
     modules: [
       {
         title: "Module 1: Sensing",
+        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
           { text: "Data collection and annotation strategy" },
           { text: "Detector/tracker pipeline (YOLO, ByteTrack, etc.)" },
@@ -77,6 +88,7 @@ window.SITE_CONFIG = {
       },
       {
         title: "Module 2: Simulating",
+        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
           { text: "Network building (geometry, lanes, routes)" },
           { text: "Calibration and validation (GEH, travel time, queues)" },
@@ -86,6 +98,7 @@ window.SITE_CONFIG = {
       },
       {
         title: "Module 3: Optimizing",
+        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
           { text: "Webster approach" },
           { text: "Decision variables (cycle, split, offset, phases)" },
@@ -95,6 +108,7 @@ window.SITE_CONFIG = {
       },
       {
         title: "Module 4: Deciding",
+        videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
           { text: "Best scenario summary (what changed and why)" },
           { text: "Implementation notes (constraints, feasibility)" },
