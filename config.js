@@ -107,10 +107,8 @@ window.SITE_CONFIG = {
     dataSourcesTitle: "Data Sources",
     dataSources: [
       {
-        name: "Video Data",
         detail:
           "Course-provided footage of the study intersection used to estimate volumes and turning movements. If public footage is used, cite the URL and date accessed.",
-        url: ""
       },
       {
         name: "Intersection Geometry",
