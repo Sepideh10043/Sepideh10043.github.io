@@ -35,12 +35,13 @@
       a{ color: var(--accent); }
       a:hover{ opacity: 0.85; }
 
+      /* HERO */
       .hero-banner{
         background-color: var(--hero-bg);
         color: var(--hero-fg);
       }
 
-      /* NEW: course code tag above course project pill */
+      /* RWR 4013 tag */
       .hero-course-tag{
         display: inline-block;
         padding: 0.25rem 0.6rem;
@@ -55,7 +56,7 @@
         margin-bottom: 0.45rem;
       }
 
-      /* Your eye-catching course project pill */
+      /* Course Project pill (big) */
       .hero-tagline{
         opacity: 1;
         font-size: clamp(1.2rem, 2.4vw, 1.7rem);
@@ -79,6 +80,7 @@
         margin: 0 auto;
       }
 
+      /* Portrait */
       .hero-photo{
         width: 110px;
         height: 110px;
@@ -89,6 +91,7 @@
         margin: 1rem auto 1rem;
       }
 
+      /* Notice / disclaimer bar */
       .notice{
         border-radius: 12px;
         border: 1px solid rgba(255,255,255,0.18);
@@ -109,6 +112,7 @@
         opacity: 0.95;
       }
 
+      /* Divider */
       .star-divider{
         font-size: 0.5rem;
         color: var(--divider-text);
@@ -118,6 +122,7 @@
         margin: 0;
       }
 
+      /* Intro video */
       .intro-video-wrap{
         position: relative;
         border-radius: 12px;
@@ -149,6 +154,7 @@
       @media (min-width: 992px){ .intro-video-wrap{ max-width: 768px; } }
       @media (min-width: 1200px){ .intro-video-wrap{ max-width: 672px; } }
 
+      /* Circle images */
       .circle-img{
         width: 150px;
         height: 150px;
@@ -160,6 +166,7 @@
       .tutorial-title{ font-size: 0.98rem; font-weight: 800; }
       .tutorial-text{ font-size: 0.88rem; }
 
+      /* Cards */
       .card-soft{
         border: 1px solid rgba(0,0,0,0.06);
         box-shadow: 0 10px 30px rgba(0,0,0,0.06);
@@ -167,6 +174,7 @@
         background: #fff;
       }
 
+      /* Check list */
       .check-list{ list-style: none; padding-left: 0; }
       .check-list li{
         position: relative;
@@ -183,6 +191,7 @@
         font-weight: 800;
       }
 
+      /* Module layout */
       .tutorial-text-col{
         display: flex;
         flex-direction: column;
@@ -196,9 +205,11 @@
       }
       @media (min-width: 992px){ .tutorial-large-img{ max-width: 640px; } }
 
+      /* KPI table */
       .kpi-table th{ font-weight: 800; }
       .kpi-note{ color: #6c757d; font-size: 0.9rem; }
 
+      /* Footer */
       footer{
         border-top: 1px solid var(--footer-border);
         background-color: var(--footer-bg);
@@ -224,10 +235,12 @@
     <header class="hero-banner text-center py-5">
       <div class="container">
 
-        <!-- NEW: course tag -->
-        <div class="hero-course-tag" id="courseTag" style="display:none;">RWR 4013</div>
+        <!-- RWR 4013 tag -->
+        <div class="mb-1">
+          <span class="hero-course-tag" id="courseTag" style="display:none;">RWR 4013</span>
+        </div>
 
-        <!-- Course project pill -->
+        <!-- Course Project pill -->
         <div class="hero-tagline" id="studioTagline">Course Project: Digital Twins for Smart Cities</div>
 
         <img
@@ -251,20 +264,20 @@
         <div class="notice">
           <div class="notice-title" id="noticeTitle">Academic Disclaimer</div>
           <p class="notice-text" id="noticeText">
-            Educational purposes only. Not an official city analysis, consultation, or endorsement.
+            Academic project for a university course. Educational purposes only. Not an official city analysis, consultation, or endorsement.
           </p>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- INTRO + AUTOPLAY VIDEO -->
+      <!-- PROJECT TITLE + AUTOPLAY VIDEO -->
       <section class="py-3 text-center bg-white">
         <div class="container">
-          <h1 class="section-title h2 mb-3" id="introTitle">Project Title</h1>
-          <p class="lead mb-4 section-subtitle" id="introSubtitle">
+          <div class="text-muted small text-uppercase mb-2" id="projectTitleLabel">Project Title</div>
+          <h1 class="section-title h2 mb-4" id="projectTitleText">
             Digital Twin of an Urban Intersection Using Video-Based Demand Estimation and SUMO Scenario Testing
-          </p>
+          </h1>
 
           <div class="intro-video-wrap">
             <video
@@ -331,6 +344,7 @@
       <section class="py-5 bg-white">
         <div class="container">
           <h2 class="section-title h3 text-center mb-2" id="overviewTitle">Methodology</h2>
+          <p class="text-center text-muted mb-5 section-subtitle" id="overviewSubtitle" style="display:none;"></p>
 
           <div id="stepsRow" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 justify-content-center"></div>
         </div>
@@ -341,6 +355,8 @@
       <section class="py-5 bg-white">
         <div class="container">
           <h2 class="section-title h3 text-center mb-2" id="implTitle">Methodology Steps (Demo Modules)</h2>
+          <p class="text-center text-muted mb-5 section-subtitle" id="implSubtitle" style="display:none;"></p>
+
           <div id="modulesContainer"></div>
         </div>
       </section>
@@ -372,7 +388,7 @@
             </div>
           </div>
 
-          <!-- CHARTS SPACE -->
+          <!-- CHARTS -->
           <div class="row g-4 mt-4">
             <div class="col-lg-6">
               <div class="card card-soft h-100">
@@ -393,6 +409,7 @@
             </div>
           </div>
 
+          <!-- DISCUSSION -->
           <div class="row g-4 mt-3">
             <div class="col-lg-12">
               <div class="card card-soft">
@@ -486,6 +503,7 @@
     <script>
       const C = window.SITE_CONFIG || {};
 
+      // Theme vars
       if (C.theme) {
         document.documentElement.style.setProperty("--hero-bg",  C.theme.heroBg  || "#111");
         document.documentElement.style.setProperty("--hero-fg",  C.theme.heroText || "#fff");
@@ -502,23 +520,32 @@
         document.documentElement.style.setProperty("--footer-border", C.footer.footerBorder || "#222");
       }
 
+      // Title
       if (C.pageTitle) document.title = C.pageTitle;
 
       const el = (id) => document.getElementById(id);
       const setText = (id, val) => { const x = el(id); if (x && val != null) x.textContent = val; };
-
+      const setTextOrHide = (id, val) => {
+        const x = el(id);
+        if (!x) return;
+        const v = (val ?? "").toString().trim();
+        if (!v) { x.style.display = "none"; return; }
+        x.style.display = "";
+        x.textContent = v;
+      };
       const fillList = (ulId, items) => {
         const ul = el(ulId);
         if (!ul) return;
         ul.innerHTML = (items || []).map(t => `<li>${t}</li>`).join("");
       };
 
+      // Footer home url
       const footerHome = el("footerHome");
       if (footerHome) footerHome.href = C.homeUrl || "https://roadwayvr.com";
 
-      // HERO
+      // Hero
       if (C.hero) {
-        // course tag
+        // course tag (RWR 4013)
         const ct = el("courseTag");
         const tagText = (C.hero.courseTag || "").trim();
         if (ct) {
@@ -530,13 +557,12 @@
           }
         }
 
-        setText("studioTagline", C.hero.tagline || "");
+        setText("studioTagline", C.hero.tagline || "Course Project: Digital Twins for Smart Cities");
+        setText("studentNameLine", C.hero.studentName || "");
+        setText("studentAffilLine", [C.hero.program, C.hero.university].filter(Boolean).join(", "));
 
         const img = el("profileImg");
         if (img && C.hero.profileImage) img.src = C.hero.profileImage;
-
-        setText("studentNameLine", C.hero.studentName || "");
-        setText("studentAffilLine", [C.hero.program, C.hero.university].filter(Boolean).join(", "));
 
         const emailLink = el("emailLink");
         if (emailLink && C.hero.email) {
@@ -552,17 +578,17 @@
 
       // Disclaimer
       if (C.disclaimer) {
+        setText("noticeTitle", "Academic Disclaimer");
         setText("noticeText", C.disclaimer.short || "");
         setText("footerDisclaimer", C.disclaimer.short || "");
         setText("disclaimerLong", C.disclaimer.long || "");
       }
 
-      // Intro (project title)
+      // Intro (Project title + video)
       if (C.intro) {
-        setText("introTitle", C.intro.projectTitleLabel || "Project Title");
-        setText("introSubtitle", C.intro.projectTitle || "");
-
-        setText("introCaption", C.intro.videoCaption || "");
+        setTextOrHide("projectTitleLabel", C.intro.projectTitleLabel || "Project Title");
+        setTextOrHide("projectTitleText", C.intro.projectTitle || "");
+        setTextOrHide("introCaption", C.intro.videoCaption || "");
 
         const v = el("introHeroVideo");
         const s = el("introHeroSource");
@@ -577,7 +603,7 @@
         }
       }
 
-      // Intro cards
+      // Introduction cards
       if (C.caseStudy) {
         setText("caseTitle", C.caseStudy.title || "Introduction");
 
@@ -591,9 +617,11 @@
         fillList("objectivesList", C.caseStudy.objectivesBullets || []);
       }
 
-      // Method steps
+      // Overview steps
       if (C.overview) {
         setText("overviewTitle", C.overview.title || "Methodology");
+        setTextOrHide("overviewSubtitle", C.overview.subtitle || "");
+
         const stepsRow = el("stepsRow");
         if (stepsRow && Array.isArray(C.overview.steps)) {
           stepsRow.innerHTML = C.overview.steps.slice(0, 4).map(step => `
@@ -608,9 +636,10 @@
         }
       }
 
-      // Modules
+      // Implementation modules
       if (C.implementation) {
         setText("implTitle", C.implementation.title || "Methodology Steps (Demo Modules)");
+        setTextOrHide("implSubtitle", C.implementation.subtitle || "");
 
         const wrap = el("modulesContainer");
         const modules = Array.isArray(C.implementation.modules) ? C.implementation.modules.slice(0, 4) : [];
@@ -628,7 +657,9 @@
                 <div class="col-lg-6 ${textColOrder} tutorial-text-col">
                   <div>
                     <h3 class="h4 mb-2">${m.title || ""}</h3>
-                    <ul class="check-list">${bulletHtml}</ul>
+                    <ul class="check-list">
+                      ${bulletHtml}
+                    </ul>
                   </div>
                 </div>
                 <div class="col-lg-6 ${imgColOrder}">
