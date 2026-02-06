@@ -165,12 +165,12 @@ window.SITE_CONFIG = {
     charts: {
       left: {
         title: "Average Delay per Approach",
-        src: "assets/img/chart_delay_per_approach.png",
+        src: "assets/img/image6.jpg",
         alt: "Average delay per approach chart"
       },
       right: {
         title: "Average Delay (Overall)",
-        src: "assets/img/chart_delay_overall.png",
+        src: "assets/img/image7.jpg",
         alt: "Overall average delay chart"
       }
     },
