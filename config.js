@@ -270,7 +270,7 @@ window.SITE_CONFIG = {
 
     acknowledgments: [
       "Course: Digital Twins for Smart Cities",
-      "Institution: York University",
+      "Institution: RoadwayVR University",
       "Instructor: [Instructor Name Here]",
       "Data: Course-provided video and/or public sources (listed above)",
       "Tools: SUMO, Python, CV models, and visualization tools"
