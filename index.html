@@ -108,7 +108,7 @@
         margin: 0;
       }
 
-      /* Smaller autoplay intro video */
+      /* Autoplay intro video */
       .intro-video-wrap{
         position: relative;
         border-radius: 12px;
@@ -140,6 +140,19 @@
       @media (min-width: 992px){ .intro-video-wrap{ max-width: 768px; } }
       @media (min-width: 1200px){ .intro-video-wrap{ max-width: 672px; } }
 
+      /* Cards */
+      .card-soft{
+        border: 1px solid rgba(0,0,0,0.06);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        border-radius: 14px;
+      }
+
+      /* Background card styling for first intro box */
+      .intro-bg-card{
+        background: rgba(124,58,237,0.06);
+        border-color: rgba(124,58,237,0.18) !important;
+      }
+
       /* Circle images */
       .circle-img{
         width: 150px;
@@ -151,13 +164,6 @@
       }
       .tutorial-title{ font-size: 0.98rem; font-weight: 800; }
       .tutorial-text{ font-size: 0.88rem; }
-
-      /* Cards */
-      .card-soft{
-        border: 1px solid rgba(0,0,0,0.06);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-        border-radius: 14px;
-      }
 
       /* Check list */
       .check-list{ list-style: none; padding-left: 0; }
@@ -304,14 +310,25 @@
         </div>
       </section>
 
-      <!-- CASE STUDY -->
+      <!-- INTRODUCTION (3 BOXES) -->
       <div class="star-divider">*</div>
       <section class="py-5 bg-white">
         <div class="container">
-          <h2 class="section-title h3 text-center mb-2" id="caseTitle">Case Study Context</h2>
+          <h2 class="section-title h3 text-center mb-2" id="caseTitle">Introduction</h2>
 
           <div class="row g-4 mt-2">
-            <div class="col-lg-6">
+            <!-- Background -->
+            <div class="col-lg-4">
+              <div class="card card-soft intro-bg-card h-100">
+                <div class="card-body">
+                  <h3 class="h5 mb-2" id="backgroundTitle">Background</h3>
+                  <p class="mb-0 text-muted" id="backgroundText"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Problem Statement -->
+            <div class="col-lg-4">
               <div class="card card-soft h-100">
                 <div class="card-body">
                   <h3 class="h5 mb-2" id="problemTitle">Problem Statement</h3>
@@ -320,51 +337,12 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <!-- Project Objectives -->
+            <div class="col-lg-4">
               <div class="card card-soft h-100">
                 <div class="card-body">
                   <h3 class="h5 mb-2" id="objectivesTitle">Project Objectives</h3>
                   <ul class="mb-0" id="objectivesList"></ul>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- DATA & METHODS -->
-      <div class="star-divider">*</div>
-      <section class="py-5 bg-light">
-        <div class="container">
-          <h2 class="section-title h3 text-center mb-2" id="dmTitle">Data & Methods (Transparency)</h2>
-          <p class="text-center text-muted mb-4 section-subtitle" id="dmSubtitle"></p>
-
-          <div class="row g-4">
-            <div class="col-lg-4">
-              <div class="card card-soft h-100">
-                <div class="card-body">
-                  <h3 class="h6 fw-bold mb-2" id="dmDataTitle">Data Sources</h3>
-                  <ul class="mb-0" id="dmDataList"></ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="card card-soft h-100">
-                <div class="card-body">
-                  <h3 class="h6 fw-bold mb-2" id="dmToolsTitle">Tools Used</h3>
-                  <ul class="mb-0" id="dmToolsList"></ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="card card-soft h-100">
-                <div class="card-body">
-                  <h3 class="h6 fw-bold mb-2" id="dmAssumpTitle">Assumptions & Limitations</h3>
-                  <ul class="mb-0" id="dmAssumpList"></ul>
                 </div>
               </div>
             </div>
@@ -597,55 +575,23 @@
           if (C.intro.heroVideoPoster) v.poster = C.intro.heroVideoPoster;
           if (C.intro.heroVideoAlt) v.setAttribute("aria-label", C.intro.heroVideoAlt);
           v.load();
-          // attempt autoplay
           const tryPlay = () => v.play().catch(() => {});
           v.addEventListener("canplay", tryPlay, { once: true });
           tryPlay();
         }
       }
 
-      // Case study
+      // Introduction (3 boxes)
       if (C.caseStudy) {
-        setText("caseTitle", C.caseStudy.title);
+        setText("caseTitle", C.caseStudy.title || "Introduction");
+        setText("backgroundTitle", C.caseStudy.backgroundTitle || "Background");
+        setText("backgroundText", C.caseStudy.introText || "");
+
         setText("problemTitle", C.caseStudy.problemTitle);
         setText("objectivesTitle", C.caseStudy.objectivesTitle);
 
         fillList("problemList", C.caseStudy.problemBullets || []);
         fillList("objectivesList", C.caseStudy.objectivesBullets || []);
-
-        setText("locationLabel", C.caseStudy.locationLabel || "Study Location");
-        setText("locationValue", C.caseStudy.locationValue || "");
-        setText("timeframeLabel", C.caseStudy.timeframeLabel || "Data Window");
-        setText("timeframeValue", C.caseStudy.timeframeValue || "");
-      }
-
-      // Data & methods
-      if (C.dataMethods) {
-        setText("dmTitle", C.dataMethods.title);
-        setText("dmSubtitle", C.dataMethods.subtitle);
-        setText("dmDataTitle", C.dataMethods.dataSourcesTitle || "Data Sources");
-        setText("dmToolsTitle", C.dataMethods.toolsTitle || "Tools Used");
-        setText("dmAssumpTitle", C.dataMethods.assumptionsTitle || "Assumptions & Limitations");
-
-        // ✅ MODIFIED: Data Sources list shows ONLY the detail (no bold labels like "Video Data:")
-        const dmData = el("dmDataList");
-        if (dmData) {
-          dmData.innerHTML = (C.dataMethods.dataSources || []).map(d => {
-            // support both object entries and plain strings
-            if (typeof d === "string") return `<li>${d}</li>`;
-
-            const detail = d && d.detail ? d.detail : "";
-            const url = d && d.url ? d.url : "";
-            const link = url
-              ? ` <a href="${url}" target="_blank" rel="noopener noreferrer">(source)</a>`
-              : "";
-
-            return `<li>${detail}${link}</li>`;
-          }).join("");
-        }
-
-        fillList("dmToolsList", C.dataMethods.tools || []);
-        fillList("dmAssumpList", C.dataMethods.assumptionsBullets || []);
       }
 
       // Overview steps
@@ -667,7 +613,7 @@
         }
       }
 
-      // Implementation modules
+      // Implementation modules (no demo video links)
       if (C.implementation) {
         setText("implTitle", C.implementation.title);
         setText("implSubtitle", C.implementation.subtitle);
@@ -683,7 +629,6 @@
             const textColOrder = (i % 2 === 1) ? "order-lg-2" : "";
             const imgColOrder  = (i % 2 === 1) ? "order-lg-1" : "";
 
-            // ✅ MODIFIED: remove video link + "See demo video" text entirely
             return `
               <div class="row gy-4 mb-5">
                 <div class="col-lg-6 ${textColOrder} tutorial-text-col">
@@ -740,9 +685,7 @@
 
         setText("repoLabel", C.team.repoLabel || "Project Repository");
         const repoLink = el("repoLink");
-        if (repoLink) {
-          repoLink.href = C.team.repoUrl || "#";
-        }
+        if (repoLink) repoLink.href = C.team.repoUrl || "#";
       }
     </script>
   </body>
