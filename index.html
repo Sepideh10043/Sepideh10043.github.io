@@ -190,12 +190,6 @@
       }
       @media (min-width: 992px){ .tutorial-large-img{ max-width: 640px; } }
 
-      .video-link{
-        display: inline-block;
-        margin-bottom: 0.75rem;
-        text-decoration: underline;
-      }
-
       /* KPI table */
       .kpi-table th{ font-weight: 800; }
       .kpi-note{ color: #6c757d; font-size: 0.9rem; }
@@ -639,16 +633,23 @@
         setText("dmToolsTitle", C.dataMethods.toolsTitle || "Tools Used");
         setText("dmAssumpTitle", C.dataMethods.assumptionsTitle || "Assumptions & Limitations");
 
+        // ✅ MODIFIED: Data Sources list shows ONLY the detail (no bold labels like "Video Data:")
         const dmData = el("dmDataList");
         if (dmData) {
           dmData.innerHTML = (C.dataMethods.dataSources || []).map(d => {
-            const name = d.name || "";
-            const detail = d.detail || "";
-            const url = d.url || "";
-            const link = url ? ` <a href="${url}" target="_blank" rel="noopener noreferrer">(source)</a>` : "";
-            return `<li><strong>${name}:</strong> ${detail}${link}</li>`;
+            // support both object entries and plain strings
+            if (typeof d === "string") return `<li>${d}</li>`;
+
+            const detail = d && d.detail ? d.detail : "";
+            const url = d && d.url ? d.url : "";
+            const link = url
+              ? ` <a href="${url}" target="_blank" rel="noopener noreferrer">(source)</a>`
+              : "";
+
+            return `<li>${detail}${link}</li>`;
           }).join("");
         }
+
         fillList("dmToolsList", C.dataMethods.tools || []);
         fillList("dmAssumpList", C.dataMethods.assumptionsBullets || []);
       }
@@ -688,16 +689,12 @@
             const textColOrder = (i % 2 === 1) ? "order-lg-2" : "";
             const imgColOrder  = (i % 2 === 1) ? "order-lg-1" : "";
 
-            const videoHtml = m.videoUrl
-              ? `<a class="video-link" href="${m.videoUrl}" target="_blank" rel="noopener noreferrer">See demo video</a>`
-              : "";
-
+            // ✅ MODIFIED: remove video link + "See demo video" text entirely
             return `
               <div class="row gy-4 mb-5">
                 <div class="col-lg-6 ${textColOrder} tutorial-text-col">
                   <div>
                     <h3 class="h4 mb-2">${m.title || ""}</h3>
-                    ${videoHtml}
                     <ul class="check-list">
                       ${bulletHtml}
                     </ul>
