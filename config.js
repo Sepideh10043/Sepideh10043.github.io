@@ -148,7 +148,7 @@ window.SITE_CONFIG = {
   },
 
   overview: {
-    title: "Digital Twin Pipeline",
+    title: "Methodology",
     subtitle: "A 4-step pipeline used in this case study: Sensing → Simulating → Optimizing → Visualizing.",
     steps: [
       {
@@ -179,7 +179,7 @@ window.SITE_CONFIG = {
   },
 
   implementation: {
-    title: "Technical Implementation (Demo Modules)",
+    title: "Methodology Steps (Demo Modules)",
     subtitle:
       "Each module includes a short demo and evidence (screenshots/plots) showing what was implemented and how outputs were validated at a basic academic level.",
 
