@@ -39,17 +39,8 @@
         background-color: var(--hero-bg);
         color: var(--hero-fg);
       }
-      .hero-quote{
-        font-family: "Georgia","Times New Roman",serif;
-        font-style: italic;
-        font-size: 1.55rem;
-        line-height: 1.5;
-      }
-      .hero-kicker{
-        opacity: 0.95;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-      }
+
+      /* removed quote + top brand/kicker visually by not rendering them (we also remove in HTML) */
       .hero-tagline{
         opacity: 0.9;
         font-size: 0.95rem;
@@ -202,14 +193,6 @@
         opacity: 0.9;
         font-size: 0.9rem;
       }
-
-      .brand-link{
-        display: inline-block;
-        font-weight: 800;
-        letter-spacing: 0.02em;
-        text-decoration: none;
-      }
-      .brand-link:hover{ opacity: 0.9; }
     </style>
   </head>
 
@@ -217,22 +200,11 @@
     <!-- HERO -->
     <header class="hero-banner text-center py-5">
       <div class="container">
-        <div class="mb-2">
-          <a id="brandLink"
-             class="brand-link text-white"
-             href="https://roadwayvr.com"
-             target="_blank"
-             rel="noopener noreferrer">
-            Student Academic Showcase
-          </a>
+
+        <!-- ✅ Only keep the course line (updated text) -->
+        <div class="hero-tagline mb-3" id="studioTagline">
+          Course Project: Digital Twins for Smart Cities
         </div>
-
-        <div class="hero-kicker" id="studioName">Academic Digital Twin Studio</div>
-        <div class="hero-tagline mb-3" id="studioTagline">Course Project · Educational Case Study</div>
-
-        <p class="hero-quote mb-3" id="heroQuote">
-          “Digital twins turn data into decisions.”
-        </p>
 
         <img
           src="assets/img/image1.jpg"
@@ -265,9 +237,10 @@
       <!-- INTRO + AUTOPLAY VIDEO -->
       <section class="py-3 text-center bg-white">
         <div class="container">
-          <h1 class="section-title h2 mb-3" id="introTitle">Digital Twin Case Study</h1>
-          <p class="lead mb-4 section-subtitle" id="introSubtitle">
-            End-to-end pipeline demonstration using real-world video data and simulation.
+          <!-- ✅ Replace intro title/subtitle with Project Title block -->
+          <h1 class="section-title h2 mb-2" id="projectTitleLabel">Project Title</h1>
+          <p class="lead mb-4 section-subtitle" id="projectTitleValue">
+            Your Project Title Here
           </p>
 
           <div class="intro-video-wrap">
@@ -521,23 +494,19 @@
         ul.innerHTML = (items || []).map(t => `<li>${t}</li>`).join("");
       };
 
-      const brandLink = el("brandLink");
-      if (brandLink) {
-        brandLink.textContent = C.navBrand || "Student Academic Showcase";
-        brandLink.href = C.homeUrl || "https://roadwayvr.com";
-      }
+      // footer home
       const footerHome = el("footerHome");
-      if (footerHome) footerHome.href = C.homeUrl || "https://roadwayvr.com";
+      if (footerHome) footerHome.href = C.homeUrl || "#";
 
+      // Hero (now only tagline + profile + contact)
       if (C.hero) {
-        setHTML("heroQuote", C.hero.quoteHtml);
-        setText("studioName", C.hero.studioName || "");
-        setText("studioTagline", C.hero.tagline || "");
-        setText("studentNameLine", C.hero.studentName || "");
-        setText("studentAffilLine", [C.hero.program, C.hero.university].filter(Boolean).join(", "));
+        setText("studioTagline", C.hero.tagline || "Course Project: Digital Twins for Smart Cities");
 
         const img = el("profileImg");
         if (img && C.hero.profileImage) img.src = C.hero.profileImage;
+
+        setText("studentNameLine", C.hero.studentName || "");
+        setText("studentAffilLine", [C.hero.program, C.hero.university].filter(Boolean).join(", "));
 
         const emailLink = el("emailLink");
         if (emailLink && C.hero.email) {
@@ -551,6 +520,7 @@
         }
       }
 
+      // Disclaimer
       if (C.disclaimer) {
         setText("noticeTitle", "Academic Disclaimer");
         setText("noticeText", C.disclaimer.short || "");
@@ -558,9 +528,11 @@
         setText("disclaimerLong", C.disclaimer.long || "");
       }
 
+      // Project title block (replaces old intro title/subtitle)
       if (C.intro) {
-        setText("introTitle", C.intro.title);
-        setText("introSubtitle", C.intro.subtitle);
+        setText("projectTitleLabel", C.intro.projectTitleLabel || "Project Title");
+        setText("projectTitleValue", C.intro.projectTitle || "");
+
         setText("introCaption", C.intro.videoCaption || "");
 
         const v = el("introHeroVideo");
@@ -576,6 +548,7 @@
         }
       }
 
+      // Intro cards
       if (C.caseStudy) {
         setText("caseTitle", C.caseStudy.title || "Introduction");
 
@@ -589,6 +562,7 @@
         fillList("objectivesList", C.caseStudy.objectivesBullets || []);
       }
 
+      // Overview steps
       if (C.overview) {
         setText("overviewTitle", C.overview.title);
         setText("overviewSubtitle", C.overview.subtitle);
@@ -607,6 +581,7 @@
         }
       }
 
+      // Implementation modules
       if (C.implementation) {
         setText("implTitle", C.implementation.title);
         setText("implSubtitle", C.implementation.subtitle);
@@ -641,6 +616,7 @@
         }
       }
 
+      // Results
       if (C.results) {
         setText("resultsTitle", C.results.title);
         setText("resultsSubtitle", C.results.subtitle);
@@ -677,6 +653,7 @@
         fillList("discussionList", C.results.discussionBullets || []);
       }
 
+      // Team
       if (C.team) {
         setText("teamTitle", C.team.title);
         setText("teamSubtitle", C.team.subtitle || "");
