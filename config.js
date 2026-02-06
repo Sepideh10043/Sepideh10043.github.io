@@ -23,7 +23,11 @@ window.SITE_CONFIG = {
       "This website presents a student academic project created for coursework. Any analyses, results, and potential improvements are simulation-based and provided for educational purposes only. They do not represent official work, endorsement, or consultation for any city or agency.",
     cityName: "City of X (example)",
     courseName: "Digital Twins for Smart Cities",
-    institutionName: "York University"
+    institutionName: "York University",
+
+    // NEW: optional video overlay text you can add in your edited video (first 2–3 seconds)
+    videoOverlaySuggestion:
+      "Academic Project · Educational Use Only · Not Official City Work"
   },
 
   // Theme colors
@@ -50,79 +54,127 @@ window.SITE_CONFIG = {
   intro: {
     title: "Digital Twin Case Study",
     subtitle:
-      "We demonstrate an end-to-end digital twin workflow using real-world video data: sensing with computer vision, building and calibrating a SUMO model, testing signal timing strategies, and visualizing scenario KPIs for decision support.",
+      "This website presents an academic case study that demonstrates the full digital twin pipeline using a real-world intersection video. We extract traffic demand with computer vision, build and calibrate a SUMO model, test signal timing strategies as what-if scenarios, and communicate results through clear KPIs and visualizations.",
     heroVideo: "assets/video/video.mp4",
     heroVideoPoster: "", // optional: "assets/img/cover.jpg"
     heroVideoAlt: "Autoplay preview video (academic project)",
-    videoCaption: "Autoplay preview: sensing → simulation → optimization → visualization (20s)"
+    videoCaption:
+      "Autoplay preview (≈20 seconds): raw video → detections/tracks → SUMO baseline → signal timing scenarios → KPI comparison dashboard."
   },
 
   caseStudy: {
     title: "Case Study Context",
     locationLabel: "Study Location",
-    locationValue: "Intersection Name, City, Province",
+    locationValue: "Example: Main St & 2nd Ave, City of X, Province",
     timeframeLabel: "Data Window",
     timeframeValue: "Example: Weekday PM peak (4–6 PM), Fall 2025",
 
+    // NEW: short paragraph shown under the section title (if your HTML supports it later)
+    // Keep it here so students can write it even if you add it to HTML later.
+    introText:
+      "We selected a single intersection and treated it as a case study to practice how planners and engineers evaluate operational performance using data-driven methods. The goal is to compare baseline conditions to potential improvements in simulation under clearly stated assumptions.",
+
     problemTitle: "Problem Statement",
     problemBullets: [
-      "Observed congestion and queue spillback during peak periods",
-      "Potential safety concerns due to turning conflicts and stop-and-go conditions",
-      "Need to compare low-cost operational improvements before infrastructure changes"
+      "Observed congestion and queue spillback during peak periods (video evidence).",
+      "Stop-and-go conditions and turning interactions may increase perceived conflict risk.",
+      "Need to compare low-cost operational strategies before considering major geometric changes."
     ],
 
     objectivesTitle: "Project Objectives",
     objectivesBullets: [
-      "Extract traffic volumes and movements from video using computer vision",
-      "Build and calibrate a SUMO simulation model representing baseline operations",
-      "Test signal timing strategies and compare KPIs across scenarios",
-      "Summarize results as potential improvements under stated assumptions"
+      "Extract traffic volumes, turning movements, and trajectories from video using computer vision.",
+      "Build a baseline SUMO model that matches observed demand and approximate field conditions.",
+      "Test signal timing strategies as controlled what-if scenarios (cycle, splits, offsets, phasing).",
+      "Summarize scenario performance using measurable KPIs and communicate findings clearly."
+    ],
+
+    // NEW: optional “what we deliver” examples
+    deliverablesTitle: "Academic Deliverables",
+    deliverablesBullets: [
+      "Annotated video clips and extracted counts/turning movements.",
+      "SUMO network + demand files with calibration notes.",
+      "Scenario comparison table (baseline vs strategies) with KPI plots.",
+      "Short demo video + GitHub repo for reproducibility."
     ]
   },
 
   dataMethods: {
     title: "Data & Methods (Transparency)",
     subtitle:
-      "We describe data sources, tools, assumptions, and limitations to support responsible academic use.",
+      "To support responsible academic use, we document data sources, tools, assumptions, and limitations. Results are simulation-based and should be interpreted as educational what-if outcomes—not field-validated agency conclusions.",
+
     dataSourcesTitle: "Data Sources",
     dataSources: [
-      { name: "Video Data", detail: "Course-provided or publicly accessible footage (cite source if public)", url: "" },
-      { name: "Intersection Geometry", detail: "OpenStreetMap / GIS base layers", url: "" },
-      { name: "Signal Timing", detail: "Assumed or derived baseline timing (document assumptions)", url: "" }
+      {
+        name: "Video Data",
+        detail:
+          "Course-provided footage of the study intersection used to estimate volumes and turning movements. If public footage is used, cite the URL and date accessed.",
+        url: ""
+      },
+      {
+        name: "Intersection Geometry",
+        detail:
+          "Road layout created from OpenStreetMap and refined in QGIS (lanes, approaches, connectors).",
+        url: ""
+      },
+      {
+        name: "Signal Timing",
+        detail:
+          "Baseline timing assumed/derived from observation. Any missing parameters are documented as assumptions.",
+        url: ""
+      }
     ],
+
     toolsTitle: "Tools Used",
-    tools: ["Python", "YOLO/Detector", "Tracker (e.g., ByteTrack)", "SUMO", "QGIS", "Unity / Dashboard"],
+    tools: [
+      "Python (data processing, metrics, plots)",
+      "YOLO/Detector (object detection)",
+      "Tracker (e.g., ByteTrack) for trajectories",
+      "SUMO (microsimulation model)",
+      "QGIS / OSM (network building)",
+      "Unity / Dashboard (visualization)"
+    ],
 
     assumptionsTitle: "Assumptions & Limitations",
     assumptionsBullets: [
-      "Simulation results depend on calibration quality and available data (e.g., limited observation window).",
-      "Optimized timings are evaluated in simulation only and are not validated by the city.",
-      "Findings are scenario-specific and may not generalize to other periods or locations."
-    ]
+      "Simulation performance depends on calibration quality and the representativeness of the observed time window.",
+      "Some parameters (e.g., driver behavior, compliance, exact signal settings) may be approximated and documented.",
+      "Optimized strategies are evaluated in simulation only and are not validated or endorsed by the city.",
+      "Results are scenario-specific and may change across different days, weather conditions, or demand patterns."
+    ],
+
+    // NEW: example text students can reuse verbatim
+    reproducibilityNote:
+      "Reproducibility: we provide the model files, scripts, and a short ‘How to run’ section in the repository so others can reproduce the baseline and scenario outputs."
   },
 
   overview: {
     title: "Digital Twin Pipeline",
-    subtitle: "A 4-step pipeline: Sensing → Simulating → Optimizing → Visualizing.",
+    subtitle: "A 4-step pipeline used in this case study: Sensing → Simulating → Optimizing → Visualizing.",
     steps: [
       {
         title: "Step 1: Sensing (Computer Vision)",
-        text: "Detect, track, and count vehicles from video to derive demand inputs.",
+        text:
+          "We detect and track road users from the video to estimate turning volumes, trajectories, speeds, and time headways. These outputs become inputs to the simulation model.",
         image: "assets/img/image2.jpg"
       },
       {
         title: "Step 2: Simulating (Traffic Simulation)",
-        text: "Build and calibrate a SUMO model to represent baseline operations.",
+        text:
+          "We build a SUMO network for the intersection/corridor and calibrate demand and behavior so baseline queues and travel times are reasonable compared to what is observed.",
         image: "assets/img/image3.jpg"
       },
       {
         title: "Step 3: Optimizing (Signal Strategy Testing)",
-        text: "Test timing strategies and compare performance across scenarios.",
+        text:
+          "We test alternative timing plans (cycle length, green splits, offsets, phases). Each scenario is evaluated using consistent KPIs to enable a fair comparison.",
         image: "assets/img/image4.jpg"
       },
       {
         title: "Step 4: Visualizing (Decision Support)",
-        text: "Communicate results with KPIs, plots, and scenario comparisons.",
+        text:
+          "We communicate outcomes with KPI dashboards, plots, and short animations to help a non-technical audience understand tradeoffs between scenarios.",
         image: "assets/img/image5.jpg"
       }
     ]
@@ -130,15 +182,21 @@ window.SITE_CONFIG = {
 
   implementation: {
     title: "Technical Implementation (Demo Modules)",
-    subtitle: "Short module demos with links (optional): each module shows evidence and outputs.",
+    subtitle:
+      "Each module includes a short demo and evidence (screenshots/plots) showing what was implemented and how outputs were validated at a basic academic level.",
+
+    // NEW: mini paragraph students can use if you later show it in HTML
+    introText:
+      "Below we document key technical decisions so the work is transparent and reproducible. The emphasis is on clear inputs/outputs and measurable evidence—not marketing claims.",
+
     modules: [
       {
         title: "Module 1: Sensing",
         videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
-          { text: "Detection + tracking approach (what model, what tracker)" },
-          { text: "Outputs: counts, turning movements, trajectories (examples)" },
-          { text: "Quality checks: missed detections, occlusion notes" }
+          { text: "Detector + tracker used (e.g., YOLOv8 + ByteTrack) and why chosen." },
+          { text: "Extraction of turning volumes and movement counts from tracked trajectories." },
+          { text: "Quality checks: occlusion notes, sample frames, and error sources." }
         ],
         image: "assets/img/image2.jpg"
       },
@@ -146,9 +204,9 @@ window.SITE_CONFIG = {
         title: "Module 2: Simulating",
         videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
-          { text: "Network build + demand inputs from sensing outputs" },
-          { text: "Calibration evidence (travel time / queue / GEH, etc.)" },
-          { text: "Baseline KPI summary" }
+          { text: "Network build: lanes/connectors, routes, demand inputs from Module 1." },
+          { text: "Calibration evidence: travel time, queue length, or GEH comparison where possible." },
+          { text: "Baseline KPIs: delay, queues, stops, throughput (brief summary)." }
         ],
         image: "assets/img/image3.jpg"
       },
@@ -156,9 +214,9 @@ window.SITE_CONFIG = {
         title: "Module 3: Signal Strategy Testing",
         videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
-          { text: "What was changed (cycle, split, offsets, phases)" },
-          { text: "How strategies were tested (scenarios / constraints)" },
-          { text: "Before vs after KPI comparison" }
+          { text: "Decision variables changed: cycle length, splits, offsets, and/or phase structure." },
+          { text: "Scenario design: baseline + 2–3 what-if timing strategies under the same demand." },
+          { text: "Comparison: before vs after KPI table and one clear plot." }
         ],
         image: "assets/img/image4.jpg"
       },
@@ -166,9 +224,9 @@ window.SITE_CONFIG = {
         title: "Module 4: Visualization",
         videoUrl: "https://youtu.be/PUT_VIDEO_LINK_HERE",
         bullets: [
-          { text: "Dashboard/plots used to communicate results" },
-          { text: "Scenario comparison: what-if outcomes" },
-          { text: "Limitations and next steps" }
+          { text: "Dashboard or plot set: KPI cards, bar charts, and/or time series." },
+          { text: "Scenario story: what changed, what improved, and what tradeoffs appeared." },
+          { text: "Limitations + next steps: what data would strengthen confidence." }
         ],
         image: "assets/img/image5.jpg"
       }
@@ -178,34 +236,59 @@ window.SITE_CONFIG = {
   results: {
     title: "Results & Potential Improvements (Simulation-Based)",
     subtitle:
-      "We report baseline vs tested scenario performance using measurable KPIs. These are academic simulation outputs, not city-validated results.",
+      "We compare baseline conditions to tested scenarios using measurable KPIs. These results are simulation outputs for educational purposes only and are not city-validated or approved.",
+
+    // NEW: optional “headline result” students can add
+    headlineResult:
+      "Headline (example): In simulation, Strategy B reduced average delay by ~20% and shortened peak queues by ~22% relative to the baseline.",
 
     kpis: [
-      { metric: "Average delay", baseline: "45", improved: "36", unit: "s/veh", note: "Simulated average" },
-      { metric: "Max queue", baseline: "180", improved: "140", unit: "m", note: "Peak 5-min window" },
-      { metric: "Travel time", baseline: "220", improved: "190", unit: "s", note: "Study corridor" }
+      { metric: "Average delay", baseline: "45", improved: "36", unit: "s/veh", note: "Simulated average (all approaches)" },
+      { metric: "Max queue", baseline: "180", improved: "140", unit: "m", note: "Peak 5-min window (worst approach)" },
+      { metric: "Travel time", baseline: "220", improved: "190", unit: "s", note: "Study corridor (one direction)" }
     ],
 
     discussionTitle: "Discussion (Safe Language)",
     discussionBullets: [
       "In our simulation, timing changes reduced delay and queues under the observed demand conditions.",
-      "Benefits depend on traffic patterns; additional days/time periods should be tested.",
+      "Tradeoffs may exist (e.g., one approach improves while another worsens); we report both.",
+      "Additional testing across multiple days/time periods would improve confidence and generalizability.",
       "Any real-world implementation would require agency review, constraints, and field validation."
-    ]
+    ],
+
+    // NEW: a safe “what-if” conclusion sentence students can reuse
+    safeConclusionSentence:
+      "These findings should be interpreted as academic what-if scenario outcomes under stated assumptions, not as an official operational assessment."
   },
 
   team: {
     title: "Team & Acknowledgments",
-    subtitle: "Academic context, roles, and references for transparency.",
+    subtitle:
+      "This section clarifies academic context, roles, tools, and sources. Clear attribution improves credibility and shows ethical data handling.",
+
     members: [
-      { name: "Your Name", role: "CV + Simulation + Reporting" }
+      { name: "Your Name", role: "Computer Vision + Simulation + KPI Analysis + Reporting" }
     ],
+
     acknowledgments: [
       "Course: Digital Twins for Smart Cities",
       "Institution: York University",
-      "Instructor: [Your Name Here]"
+      "Instructor: [Instructor Name Here]",
+      "Data: Course-provided video and/or public sources (listed above)",
+      "Tools: SUMO, Python, CV models, and visualization tools"
     ],
+
+    // NEW: suggested credits line
+    creditsLine:
+      "Credits: This is a student academic project. Any errors or interpretations are the student’s own.",
+
     repoLabel: "Project Repository",
-    repoUrl: "https://github.com/USERNAME/REPO"
+    repoUrl: "https://github.com/USERNAME/REPO",
+
+    // NEW: optional extra links students can add later if you decide to show them
+    extraLinks: [
+      { label: "Demo Video", url: "https://youtu.be/PUT_VIDEO_LINK_HERE" },
+      { label: "Final Report (PDF)", url: "assets/report/final-report.pdf" }
+    ]
   }
 };
