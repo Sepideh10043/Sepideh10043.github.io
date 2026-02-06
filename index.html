@@ -15,8 +15,8 @@
       :root{
         --hero-bg: #111;
         --hero-fg: #fff;
-        --page-bg: #fafafa;
-        --accent: #0ea5a6;
+        --page-bg: #f8fafc;
+        --accent: #7c3aed;
 
         --divider-bg: #f9f9f9;
         --divider-text: #ffffff;
@@ -26,165 +26,89 @@
         --footer-border: #222;
       }
 
-      body {
+      body{
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         scroll-behavior: smooth;
         background-color: var(--page-bg);
       }
 
-      a { color: var(--accent); }
-      a:hover { opacity: 0.85; }
+      a{ color: var(--accent); }
+      a:hover{ opacity: 0.85; }
 
-      /* Top quote banner */
-      .hero-banner {
+      /* Hero banner */
+      .hero-banner{
         background-color: var(--hero-bg);
         color: var(--hero-fg);
       }
-
-      .hero-quote {
-        font-family: "Georgia", "Times New Roman", serif;
+      .hero-quote{
+        font-family: "Georgia","Times New Roman",serif;
         font-style: italic;
-        font-size: 1.8rem;
+        font-size: 1.55rem;
         line-height: 1.5;
       }
+      .hero-kicker{
+        opacity: 0.95;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+      .hero-tagline{
+        opacity: 0.9;
+        font-size: 0.95rem;
+      }
 
-      .section-title {
-        font-family: "Georgia", "Times New Roman", serif;
+      .section-title{
+        font-family: "Georgia","Times New Roman",serif;
         font-weight: 500;
         letter-spacing: 0.03em;
       }
-
-      .section-subtitle {
-        max-width: 820px;
+      .section-subtitle{
+        max-width: 900px;
         margin: 0 auto;
       }
 
-      /* Circle images */
-      .circle-img {
-        width: 150px;
-        height: 150px;
+      /* Portrait */
+      .hero-photo{
+        width: 110px;
+        height: 110px;
         border-radius: 50%;
+        border: 3px solid rgba(255,255,255,0.75);
         object-fit: cover;
         display: block;
-        margin: 0 auto 1rem;
+        margin: 1rem auto 1rem;
       }
 
-      .tutorial-title {
-        font-size: 0.98rem;
-        font-weight: 700;
+      /* Notice / disclaimer bar */
+      .notice{
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.18);
+        background: rgba(255,255,255,0.08);
+        padding: 12px 14px;
+        max-width: 980px;
+        margin: 14px auto 0;
+        text-align: left;
+      }
+      .notice-title{
+        font-weight: 800;
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+      }
+      .notice-text{
+        font-size: 0.92rem;
+        margin: 0;
+        opacity: 0.95;
       }
 
-      .tutorial-text {
-        font-size: 0.88rem;
-      }
-
-      /* Divider bar */
-      .star-divider {
+      /* Divider */
+      .star-divider{
         font-size: 2rem;
         color: var(--divider-text);
         background: var(--divider-bg);
         text-align: center;
-        padding: 1.25rem 0;
+        padding: 1.1rem 0;
         margin: 0;
       }
 
-      .little-star {
-        font-size: 1.6rem;
-        color: #777;
-      }
-
-      /* Large module images */
-      .tutorial-large-img {
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.16);
-        display: block;
-      }
-
-      @media (min-width: 992px) {
-        .tutorial-large-img { max-width: 640px; }
-      }
-
-      /* Checkmark list */
-      .check-list {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .check-list li {
-        position: relative;
-        padding-left: 1.4rem;
-        margin-bottom: 0.4rem;
-        font-size: 0.98rem;
-      }
-
-      .check-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #198754;
-        font-weight: 700;
-      }
-
-      /* Portrait image */
-      .hero-photo {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        border: 3px solid rgba(255, 255, 255, 0.8);
-        object-fit: cover;
-        display: block;
-        margin: 1.5rem auto 1.5rem;
-      }
-
-      /* Footer */
-      footer {
-        border-top: 1px solid var(--footer-border);
-        background-color: var(--footer-bg);
-        color: var(--footer-text);
-      }
-
-      .footer-title {
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-link {
-        display: block;
-        text-decoration: none;
-        color: var(--footer-text);
-        margin-bottom: 0.25rem;
-      }
-
-      .footer-link:hover {
-        color: var(--accent);
-      }
-
-      /* Vertical centering in module rows */
-      .tutorial-text-col {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .tutorials-narrow { max-width: 1100px; }
-
-      .brand-link {
-        display: inline-block;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        text-decoration: none;
-      }
-      .brand-link:hover { opacity: 0.9; }
-
-      .video-link {
-        display: inline-block;
-        margin-bottom: 0.75rem;
-        text-decoration: underline;
-      }
-
-      /* ===== NEW: Smaller autoplay hero video (like your preview example) ===== */
+      /* Smaller autoplay intro video */
       .intro-video-wrap{
         position: relative;
         border-radius: 12px;
@@ -192,42 +116,139 @@
         border: 1px solid rgba(0,0,0,0.08);
         aspect-ratio: 16 / 9;
         background: #000;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.16);
-        margin: 0 auto; /* center */
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.14);
+        margin: 0 auto;
       }
       .intro-video{
         width: 100%;
         height: 100%;
         display: block;
-        object-fit: contain; /* show full video, no cropping */
+        object-fit: contain;
         background: #000;
       }
-      /* make it smaller on desktop */
-      @media (min-width: 992px){
-        .intro-video-wrap{ max-width: 640px; }
+      .intro-badge{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 6px 10px;
+        font-size: 12px;
+        border-radius: 999px;
+        background: rgba(0,0,0,0.55);
+        color: #fff;
+        letter-spacing: 0.02em;
       }
-      @media (min-width: 1200px){
-        .intro-video-wrap{ max-width: 560px; }
+      @media (min-width: 992px){ .intro-video-wrap{ max-width: 640px; } }
+      @media (min-width: 1200px){ .intro-video-wrap{ max-width: 560px; } }
+
+      /* Circle images */
+      .circle-img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 1rem;
       }
+      .tutorial-title{ font-size: 0.98rem; font-weight: 800; }
+      .tutorial-text{ font-size: 0.88rem; }
+
+      /* Cards */
+      .card-soft{
+        border: 1px solid rgba(0,0,0,0.06);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        border-radius: 14px;
+      }
+
+      /* Check list */
+      .check-list{ list-style: none; padding-left: 0; }
+      .check-list li{
+        position: relative;
+        padding-left: 1.4rem;
+        margin-bottom: 0.45rem;
+        font-size: 0.98rem;
+      }
+      .check-list li::before{
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #198754;
+        font-weight: 800;
+      }
+
+      /* Module layout */
+      .tutorial-text-col{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .tutorial-large-img{
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.16);
+        display: block;
+      }
+      @media (min-width: 992px){ .tutorial-large-img{ max-width: 640px; } }
+
+      .video-link{
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        text-decoration: underline;
+      }
+
+      /* KPI table */
+      .kpi-table th{ font-weight: 800; }
+      .kpi-note{ color: #6c757d; font-size: 0.9rem; }
+
+      /* Footer */
+      footer{
+        border-top: 1px solid var(--footer-border);
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
+      }
+      .footer-title{ font-weight: 700; margin-bottom: 0.5rem; }
+      .footer-link{
+        display: block;
+        text-decoration: none;
+        color: var(--footer-text);
+        margin-bottom: 0.25rem;
+      }
+      .footer-link:hover{ color: var(--accent); }
+      .footer-disclaimer{
+        opacity: 0.9;
+        font-size: 0.9rem;
+      }
+
+      /* Brand link */
+      .brand-link{
+        display: inline-block;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+      .brand-link:hover{ opacity: 0.9; }
     </style>
   </head>
 
   <body>
-    <!-- TOP BLACK BANNER -->
-    <header id="top" class="hero-banner text-center py-5">
+    <!-- HERO -->
+    <header class="hero-banner text-center py-5">
       <div class="container">
-        <div class="mb-3">
+        <div class="mb-2">
           <a id="brandLink"
              class="brand-link text-white"
              href="https://roadwayvr.com"
              target="_blank"
              rel="noopener noreferrer">
-            Student Showcase
+            Student Academic Showcase
           </a>
         </div>
 
+        <div class="hero-kicker" id="studioName">Academic Digital Twin Studio</div>
+        <div class="hero-tagline mb-3" id="studioTagline">Course Project · Educational Case Study</div>
+
         <p class="hero-quote mb-3" id="heroQuote">
-          “Let’s Grow Together<br>One Heart, One Community”
+          “Digital twins turn data into decisions.”
         </p>
 
         <img
@@ -236,10 +257,10 @@
           class="hero-photo"
           id="profileImg">
 
-        <p class="mb-1 fw-semibold" id="studentNameLine">Student: Your Name</p>
+        <p class="mb-1 fw-semibold" id="studentNameLine">Your Name</p>
 
         <p class="mb-2 small text-uppercase text-white" id="studentAffilLine">
-          Program / Lab / Department, York University, Canada
+          Program / Department, University, Canada
         </p>
 
         <p class="mb-0 small">
@@ -247,82 +268,225 @@
             your.email@example.com
           </a>
         </p>
+
+        <!-- Visible disclaimer -->
+        <div class="notice">
+          <div class="notice-title" id="noticeTitle">Academic Disclaimer</div>
+          <p class="notice-text" id="noticeText">
+            Educational purposes only. Not an official city analysis, consultation, or endorsement.
+          </p>
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- MAIN HEADING + SMALL AUTOPLAY VIDEO -->
+      <!-- INTRO + AUTOPLAY VIDEO -->
       <section class="py-5 text-center bg-white">
         <div class="container">
-          <h1 class="section-title h2 mb-4" id="introTitle">
-            Open Learning Materials for Simulation of Urban Mobility (SUMO)
-          </h1>
+          <h1 class="section-title h2 mb-3" id="introTitle">Digital Twin Case Study</h1>
           <p class="lead mb-4 section-subtitle" id="introSubtitle">
-            SUMO Traffic Simulator tutorials from quick start and traffic signals to reinforcement learning, energy &amp; emissions, and immersive VR-based traffic studies.
+            End-to-end pipeline demonstration using real-world video data and simulation.
           </p>
 
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <div class="intro-video-wrap">
-                <video
-                  id="introHeroVideo"
-                  class="intro-video"
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                  preload="metadata"
-                  aria-label="Project showcase video (autoplay)">
-                  <source id="introHeroSource" src="assets/video/video.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
+          <div class="intro-video-wrap">
+            <video
+              id="introHeroVideo"
+              class="intro-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Autoplay preview video (academic project)">
+              <source id="introHeroSource" src="assets/video/video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="intro-badge">Academic Demo</div>
           </div>
+
+          <p class="mt-3 mb-0 text-muted small" id="introCaption">
+            Autoplay preview: sensing → simulation → optimization → visualization (20s)
+          </p>
         </div>
       </section>
 
-      <!-- TUTORIALS AT ONE GLANCE -->
+      <!-- CASE STUDY -->
       <div class="star-divider">*</div>
-      <section id="overview" class="py-5 bg-white">
-        <div class="container tutorials-narrow">
-          <h2 class="section-title h3 text-center mb-3" id="overviewTitle">Tutorials at One Glance</h2>
-          <p class="text-center mb-5 section-subtitle" id="overviewSubtitle">
-            A 4-step Digital Twin pipeline: sensing → modeling → optimizing → deciding.
-          </p>
+      <section class="py-5 bg-white">
+        <div class="container">
+          <h2 class="section-title h3 text-center mb-2" id="caseTitle">Case Study Context</h2>
+
+          <div class="row g-4 mt-2">
+            <div class="col-lg-6">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h5 mb-2" id="problemTitle">Problem Statement</h3>
+                  <ul class="mb-0" id="problemList"></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h5 mb-2" id="objectivesTitle">Project Objectives</h3>
+                  <ul class="mb-0" id="objectivesList"></ul>
+
+                  <hr class="my-3">
+
+                  <div class="small text-muted">
+                    <div><strong id="locationLabel">Study Location</strong>: <span id="locationValue"></span></div>
+                    <div class="mt-1"><strong id="timeframeLabel">Data Window</strong>: <span id="timeframeValue"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- DATA & METHODS -->
+      <div class="star-divider">*</div>
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="section-title h3 text-center mb-2" id="dmTitle">Data & Methods (Transparency)</h2>
+          <p class="text-center text-muted mb-4 section-subtitle" id="dmSubtitle"></p>
+
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h6 fw-bold mb-2" id="dmDataTitle">Data Sources</h3>
+                  <ul class="mb-0" id="dmDataList"></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h6 fw-bold mb-2" id="dmToolsTitle">Tools Used</h3>
+                  <ul class="mb-0" id="dmToolsList"></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h6 fw-bold mb-2" id="dmAssumpTitle">Assumptions & Limitations</h3>
+                  <ul class="mb-0" id="dmAssumpList"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PIPELINE OVERVIEW -->
+      <div class="star-divider">*</div>
+      <section class="py-5 bg-white">
+        <div class="container">
+          <h2 class="section-title h3 text-center mb-2" id="overviewTitle">Digital Twin Pipeline</h2>
+          <p class="text-center text-muted mb-5 section-subtitle" id="overviewSubtitle"></p>
 
           <div id="stepsRow" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 justify-content-center"></div>
         </div>
       </section>
 
-      <!-- BASIC (4 modules) -->
+      <!-- IMPLEMENTATION MODULES -->
       <div class="star-divider">*</div>
-      <section id="basic" class="py-5 bg-white">
+      <section class="py-5 bg-white">
         <div class="container">
-          <h2 class="section-title h3 text-center mb-3" id="basicTitle">Video Demonstration</h2>
-          <p class="text-center mb-5 section-subtitle" id="basicSubtitle">
-            Showcasing 1-min video for each step
-          </p>
+          <h2 class="section-title h3 text-center mb-2" id="implTitle">Technical Implementation</h2>
+          <p class="text-center text-muted mb-5 section-subtitle" id="implSubtitle"></p>
 
           <div id="modulesContainer"></div>
         </div>
       </section>
 
-      <!-- ABOUT -->
+      <!-- RESULTS -->
       <div class="star-divider">*</div>
-      <section id="about" class="py-5 bg-light">
+      <section class="py-5 bg-light">
         <div class="container">
-          <h2 class="section-title h3 mb-3">About Digital Twins for Smart Cities Course</h2>
-          <p class="mb-3">
-            This course shares open, student-friendly learning materials for building digital twins for smart cities.
-            All course resources are available online at roadwayvr.com to promote free, accessible education for learners worldwide.
-          </p>
-          <p class="mb-0">
-            For collaboration or questions, contact:
-            <a href="mailto:AhmadMohammadi1441@gmail.com">
-              AhmadMohammadi1441@gmail.com
-            </a>.
-          </p>
+          <h2 class="section-title h3 text-center mb-2" id="resultsTitle">Results & Potential Improvements</h2>
+          <p class="text-center text-muted mb-4 section-subtitle" id="resultsSubtitle"></p>
+
+          <div class="card card-soft">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-striped mb-0 kpi-table">
+                  <thead>
+                    <tr>
+                      <th>Metric</th>
+                      <th>Baseline</th>
+                      <th>Tested Scenario</th>
+                      <th>Unit</th>
+                      <th class="text-muted">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody id="kpiTbody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 mt-3">
+            <div class="col-lg-12">
+              <div class="card card-soft">
+                <div class="card-body">
+                  <h3 class="h5 mb-2" id="discussionTitle">Discussion (Safe Language)</h3>
+                  <ul class="mb-0" id="discussionList"></ul>
+                  <p class="kpi-note mt-3 mb-0" id="disclaimerLong"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <div class="star-divider">*</div>
+      <section class="py-5 bg-white">
+        <div class="container">
+          <h2 class="section-title h3 text-center mb-2" id="teamTitle">Team & Acknowledgments</h2>
+          <p class="text-center text-muted mb-4 section-subtitle" id="teamSubtitle"></p>
+
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h6 fw-bold mb-2">Team</h3>
+                  <ul class="mb-0" id="teamList"></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h6 fw-bold mb-2">Acknowledgments</h3>
+                  <ul class="mb-3" id="ackList"></ul>
+
+                  <div class="d-flex flex-column flex-md-row gap-2 align-items-md-center justify-content-between">
+                    <div class="text-muted small" id="repoLabel">Project Repository</div>
+                    <a class="btn btn-sm btn-outline-primary"
+                       id="repoLink"
+                       href="#"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      Open Repository
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
     </main>
@@ -331,30 +495,20 @@
     <footer class="py-5">
       <div class="container small">
         <div class="row gy-4">
-          <div class="col-md-3">
-            <div class="d-flex align-items-center mb-2">
-              <span class="fw-semibold">Roadway VR</span>
-            </div>
-            <p class="mb-0">
-              Open learning materials for students, researchers, and practitioners.
-            </p>
+          <div class="col-md-4">
+            <div class="footer-title">Academic Disclaimer</div>
+            <div class="footer-disclaimer" id="footerDisclaimer"></div>
           </div>
 
-          <div class="col-md-3">
-            <div class="footer-title">About</div>
-            <a href="https://roadwayvr.com/" class="footer-link">About Roadway VR</a>
+          <div class="col-md-4">
+            <div class="footer-title">Links</div>
+            <a href="#" id="footerHome" class="footer-link" target="_blank" rel="noopener noreferrer">Course Hub</a>
+            <a href="https://github.com/" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="footer-title">Contact</div>
-            <a href="mailto:AhmadMohammadi1441@gmail.com" class="footer-link">Contact Roadway VR</a>
-          </div>
-
-          <div class="col-md-3">
-            <div class="footer-title">Social</div>
-            <a href="https://www.youtube.com/@RoadwayVR" target="_blank" class="footer-link">YouTube</a>
-            <a href="https://github.com/RoadwayVR" target="_blank" class="footer-link">GitHub</a>
-            <a href="https://www.linkedin.com/in/ahmadmohammadi1441/" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="#" id="footerEmail" class="footer-link">Email</a>
           </div>
         </div>
       </div>
@@ -376,79 +530,127 @@
       if (C.theme) {
         document.documentElement.style.setProperty("--hero-bg",  C.theme.heroBg  || "#111");
         document.documentElement.style.setProperty("--hero-fg",  C.theme.heroText || "#fff");
-        document.documentElement.style.setProperty("--page-bg",  C.theme.pageBg  || "#fafafa");
-        document.documentElement.style.setProperty("--accent",   C.theme.accent  || "#0ea5a6");
+        document.documentElement.style.setProperty("--page-bg",  C.theme.pageBg  || "#f8fafc");
+        document.documentElement.style.setProperty("--accent",   C.theme.accent  || "#7c3aed");
       }
-
-      // Divider vars
       if (C.dividers) {
         document.documentElement.style.setProperty("--divider-bg",   C.dividers.dividerBg   || "#f9f9f9");
         document.documentElement.style.setProperty("--divider-text", C.dividers.dividerText || "#ffffff");
       }
-
-      // Footer vars
       if (C.footer) {
         document.documentElement.style.setProperty("--footer-bg",     C.footer.footerBg     || "#111");
         document.documentElement.style.setProperty("--footer-text",   C.footer.footerText   || "#fff");
         document.documentElement.style.setProperty("--footer-border", C.footer.footerBorder || "#222");
       }
 
-      // Page title
+      // Title
       if (C.pageTitle) document.title = C.pageTitle;
 
-      const setText = (id, val) => {
-        const el = document.getElementById(id);
-        if (el && val !== undefined && val !== null) el.textContent = val;
-      };
-      const setHTML = (id, val) => {
-        const el = document.getElementById(id);
-        if (el && val !== undefined && val !== null) el.innerHTML = val;
+      const el = (id) => document.getElementById(id);
+      const setText = (id, val) => { const x = el(id); if (x && val != null) x.textContent = val; };
+      const setHTML = (id, val) => { const x = el(id); if (x && val != null) x.innerHTML = val; };
+
+      const fillList = (ulId, items) => {
+        const ul = el(ulId);
+        if (!ul) return;
+        ul.innerHTML = (items || []).map(t => `<li>${t}</li>`).join("");
       };
 
       // Brand link
-      const brandLink = document.getElementById("brandLink");
+      const brandLink = el("brandLink");
       if (brandLink) {
-        brandLink.textContent = C.navBrand || "Student Showcase";
+        brandLink.textContent = C.navBrand || "Student Academic Showcase";
         brandLink.href = C.homeUrl || "https://roadwayvr.com";
       }
+      const footerHome = el("footerHome");
+      if (footerHome) footerHome.href = C.homeUrl || "https://roadwayvr.com";
 
       // Hero
       if (C.hero) {
         setHTML("heroQuote", C.hero.quoteHtml);
-        setText("studentNameLine", C.hero.studentName ? `Student: ${C.hero.studentName}` : "");
+        setText("studioName", C.hero.studioName || "");
+        setText("studioTagline", C.hero.tagline || "");
+        setText("studentNameLine", C.hero.studentName || "");
         setText("studentAffilLine", [C.hero.program, C.hero.university].filter(Boolean).join(", "));
 
-        const emailLink = document.getElementById("emailLink");
+        const img = el("profileImg");
+        if (img && C.hero.profileImage) img.src = C.hero.profileImage;
+
+        const emailLink = el("emailLink");
         if (emailLink && C.hero.email) {
           emailLink.textContent = C.hero.email;
           emailLink.href = "mailto:" + C.hero.email;
         }
-
-        const profileImg = document.getElementById("profileImg");
-        if (profileImg && C.hero.profileImage) profileImg.src = C.hero.profileImage;
-        if (profileImg && C.hero.studentName) profileImg.alt = `Image for ${C.hero.studentName}`;
+        const footerEmail = el("footerEmail");
+        if (footerEmail && C.hero.email) {
+          footerEmail.textContent = C.hero.email;
+          footerEmail.href = "mailto:" + C.hero.email;
+        }
       }
 
-      // Intro (autoplay video)
+      // Disclaimer
+      if (C.disclaimer) {
+        setText("noticeTitle", "Academic Disclaimer");
+        setText("noticeText", C.disclaimer.short || "");
+        setText("footerDisclaimer", C.disclaimer.short || "");
+        setText("disclaimerLong", C.disclaimer.long || "");
+      }
+
+      // Intro
       if (C.intro) {
         setText("introTitle", C.intro.title);
         setText("introSubtitle", C.intro.subtitle);
+        setText("introCaption", C.intro.videoCaption || "");
 
-        const v = document.getElementById("introHeroVideo");
-        const s = document.getElementById("introHeroSource");
-
+        const v = el("introHeroVideo");
+        const s = el("introHeroSource");
         if (v && s) {
           if (C.intro.heroVideo) s.src = C.intro.heroVideo;
           if (C.intro.heroVideoPoster) v.poster = C.intro.heroVideoPoster;
           if (C.intro.heroVideoAlt) v.setAttribute("aria-label", C.intro.heroVideoAlt);
-
           v.load();
-
-          // ensure autoplay kicks in even if browser delays it
+          // attempt autoplay
           const tryPlay = () => v.play().catch(() => {});
           v.addEventListener("canplay", tryPlay, { once: true });
           tryPlay();
         }
+      }
+
+      // Case study
+      if (C.caseStudy) {
+        setText("caseTitle", C.caseStudy.title);
+        setText("problemTitle", C.caseStudy.problemTitle);
+        setText("objectivesTitle", C.caseStudy.objectivesTitle);
+
+        fillList("problemList", C.caseStudy.problemBullets || []);
+        fillList("objectivesList", C.caseStudy.objectivesBullets || []);
+
+        setText("locationLabel", C.caseStudy.locationLabel || "Study Location");
+        setText("locationValue", C.caseStudy.locationValue || "");
+        setText("timeframeLabel", C.caseStudy.timeframeLabel || "Data Window");
+        setText("timeframeValue", C.caseStudy.timeframeValue || "");
+      }
+
+      // Data & methods
+      if (C.dataMethods) {
+        setText("dmTitle", C.dataMethods.title);
+        setText("dmSubtitle", C.dataMethods.subtitle);
+        setText("dmDataTitle", C.dataMethods.dataSourcesTitle || "Data Sources");
+        setText("dmToolsTitle", C.dataMethods.toolsTitle || "Tools Used");
+        setText("dmAssumpTitle", C.dataMethods.assumptionsTitle || "Assumptions & Limitations");
+
+        const dmData = el("dmDataList");
+        if (dmData) {
+          dmData.innerHTML = (C.dataMethods.dataSources || []).map(d => {
+            const name = d.name || "";
+            const detail = d.detail || "";
+            const url = d.url || "";
+            const link = url ? ` <a href="${url}" target="_blank" rel="noopener noreferrer">(source)</a>` : "";
+            return `<li><strong>${name}:</strong> ${detail}${link}</li>`;
+          }).join("");
+        }
+        fillList("dmToolsList", C.dataMethods.tools || []);
+        fillList("dmAssumpList", C.dataMethods.assumptionsBullets || []);
       }
 
       // Overview steps
@@ -456,7 +658,7 @@
         setText("overviewTitle", C.overview.title);
         setText("overviewSubtitle", C.overview.subtitle);
 
-        const stepsRow = document.getElementById("stepsRow");
+        const stepsRow = el("stepsRow");
         if (stepsRow && Array.isArray(C.overview.steps)) {
           stepsRow.innerHTML = C.overview.steps.slice(0, 4).map(step => `
             <div class="col">
@@ -470,13 +672,13 @@
         }
       }
 
-      // Modules
-      if (C.basic) {
-        setText("basicTitle", C.basic.title);
-        setText("basicSubtitle", C.basic.subtitle);
+      // Implementation modules
+      if (C.implementation) {
+        setText("implTitle", C.implementation.title);
+        setText("implSubtitle", C.implementation.subtitle);
 
-        const wrap = document.getElementById("modulesContainer");
-        const modules = Array.isArray(C.basic.modules) ? C.basic.modules.slice(0, 4) : [];
+        const wrap = el("modulesContainer");
+        const modules = Array.isArray(C.implementation.modules) ? C.implementation.modules.slice(0, 4) : [];
 
         if (wrap) {
           wrap.innerHTML = modules.map((m, i) => {
@@ -487,14 +689,13 @@
             const imgColOrder  = (i % 2 === 1) ? "order-lg-1" : "";
 
             const videoHtml = m.videoUrl
-              ? `<a class="video-link" href="${m.videoUrl}" target="_blank" rel="noopener noreferrer">See video</a>`
+              ? `<a class="video-link" href="${m.videoUrl}" target="_blank" rel="noopener noreferrer">See demo video</a>`
               : "";
 
             return `
               <div class="row gy-4 mb-5">
                 <div class="col-lg-6 ${textColOrder} tutorial-text-col">
                   <div>
-                    <div class="little-star mb-2">*</div>
                     <h3 class="h4 mb-2">${m.title || ""}</h3>
                     ${videoHtml}
                     <ul class="check-list">
@@ -508,6 +709,48 @@
               </div>
             `;
           }).join("");
+        }
+      }
+
+      // Results
+      if (C.results) {
+        setText("resultsTitle", C.results.title);
+        setText("resultsSubtitle", C.results.subtitle);
+        setText("discussionTitle", C.results.discussionTitle || "Discussion");
+
+        const tbody = el("kpiTbody");
+        if (tbody) {
+          tbody.innerHTML = (C.results.kpis || []).map(k => `
+            <tr>
+              <td><strong>${k.metric || ""}</strong></td>
+              <td>${k.baseline || ""}</td>
+              <td>${k.improved || ""}</td>
+              <td>${k.unit || ""}</td>
+              <td class="text-muted">${k.note || ""}</td>
+            </tr>
+          `).join("");
+        }
+
+        fillList("discussionList", C.results.discussionBullets || []);
+      }
+
+      // Team
+      if (C.team) {
+        setText("teamTitle", C.team.title);
+        setText("teamSubtitle", C.team.subtitle || "");
+
+        const teamList = el("teamList");
+        if (teamList) {
+          teamList.innerHTML = (C.team.members || []).map(m => `
+            <li><strong>${m.name || ""}</strong> — ${m.role || ""}</li>
+          `).join("");
+        }
+        fillList("ackList", C.team.acknowledgments || []);
+
+        setText("repoLabel", C.team.repoLabel || "Project Repository");
+        const repoLink = el("repoLink");
+        if (repoLink) {
+          repoLink.href = C.team.repoUrl || "#";
         }
       }
     </script>
