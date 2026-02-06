@@ -5,8 +5,13 @@ window.SITE_CONFIG = {
 
   hero: {
     profileImage: "assets/img/image1.jpg",
-    // ✅ updated tagline text
+
+    // NEW: course code tag shown above the course project pill
+    courseTag: "RWR 4013",
+
+    // updated tagline text (big pill)
     tagline: "Course Project: Digital Twins for Smart Cities",
+
     studentName: "Yohan Mohammadi",
     program: "Program / Department",
     university: "RoadwayVR University, Canada",
@@ -40,7 +45,6 @@ window.SITE_CONFIG = {
     footerBorder: "#222222"
   },
 
-  // ✅ Intro now holds project title content
   intro: {
     projectTitleLabel: "Project Title",
     projectTitle: "Digital Twin of an Urban Intersection Using Video-Based Demand Estimation and SUMO Scenario Testing",
@@ -105,7 +109,6 @@ window.SITE_CONFIG = {
 
   implementation: {
     title: "Methodology Steps (Demo Modules)",
-
     modules: [
       {
         title: "Module 1: Sensing",
