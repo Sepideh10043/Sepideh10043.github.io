@@ -35,7 +35,6 @@
       a{ color: var(--accent); }
       a:hover{ opacity: 0.85; }
 
-      /* Hero banner */
       .hero-banner{
         background-color: var(--hero-bg);
         color: var(--hero-fg);
@@ -66,7 +65,6 @@
         margin: 0 auto;
       }
 
-      /* Portrait */
       .hero-photo{
         width: 110px;
         height: 110px;
@@ -77,7 +75,6 @@
         margin: 1rem auto 1rem;
       }
 
-      /* Notice / disclaimer bar */
       .notice{
         border-radius: 12px;
         border: 1px solid rgba(255,255,255,0.18);
@@ -98,7 +95,6 @@
         opacity: 0.95;
       }
 
-      /* Divider */
       .star-divider{
         font-size: 2rem;
         color: var(--divider-text);
@@ -108,7 +104,6 @@
         margin: 0;
       }
 
-      /* Autoplay intro video */
       .intro-video-wrap{
         position: relative;
         border-radius: 12px;
@@ -140,20 +135,6 @@
       @media (min-width: 992px){ .intro-video-wrap{ max-width: 768px; } }
       @media (min-width: 1200px){ .intro-video-wrap{ max-width: 672px; } }
 
-      /* Cards */
-      .card-soft{
-        border: 1px solid rgba(0,0,0,0.06);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-        border-radius: 14px;
-      }
-
-      /* Background card styling for first intro box */
-      .intro-bg-card{
-        background: rgba(124,58,237,0.06);
-        border-color: rgba(124,58,237,0.18) !important;
-      }
-
-      /* Circle images */
       .circle-img{
         width: 150px;
         height: 150px;
@@ -165,7 +146,13 @@
       .tutorial-title{ font-size: 0.98rem; font-weight: 800; }
       .tutorial-text{ font-size: 0.88rem; }
 
-      /* Check list */
+      .card-soft{
+        border: 1px solid rgba(0,0,0,0.06);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        border-radius: 14px;
+        background: #fff;
+      }
+
       .check-list{ list-style: none; padding-left: 0; }
       .check-list li{
         position: relative;
@@ -182,7 +169,6 @@
         font-weight: 800;
       }
 
-      /* Module layout */
       .tutorial-text-col{
         display: flex;
         flex-direction: column;
@@ -196,11 +182,9 @@
       }
       @media (min-width: 992px){ .tutorial-large-img{ max-width: 640px; } }
 
-      /* KPI table */
       .kpi-table th{ font-weight: 800; }
       .kpi-note{ color: #6c757d; font-size: 0.9rem; }
 
-      /* Footer */
       footer{
         border-top: 1px solid var(--footer-border);
         background-color: var(--footer-bg);
@@ -219,7 +203,6 @@
         font-size: 0.9rem;
       }
 
-      /* Brand link */
       .brand-link{
         display: inline-block;
         font-weight: 800;
@@ -269,7 +252,6 @@
           </a>
         </p>
 
-        <!-- Visible disclaimer -->
         <div class="notice">
           <div class="notice-title" id="noticeTitle">Academic Disclaimer</div>
           <p class="notice-text" id="noticeText">
@@ -310,24 +292,22 @@
         </div>
       </section>
 
-      <!-- INTRODUCTION (3 BOXES) -->
+      <!-- INTRODUCTION (3 CARDS) -->
       <div class="star-divider">*</div>
       <section class="py-5 bg-white">
         <div class="container">
-          <h2 class="section-title h3 text-center mb-2" id="caseTitle">Introduction</h2>
+          <h2 class="section-title h3 text-center mb-4" id="caseTitle">Introduction</h2>
 
-          <div class="row g-4 mt-2">
-            <!-- Background -->
+          <div class="row g-4">
             <div class="col-lg-4">
-              <div class="card card-soft intro-bg-card h-100">
+              <div class="card card-soft h-100">
                 <div class="card-body">
                   <h3 class="h5 mb-2" id="backgroundTitle">Background</h3>
-                  <p class="mb-0 text-muted" id="backgroundText"></p>
+                  <ul class="mb-0" id="backgroundList"></ul>
                 </div>
               </div>
             </div>
 
-            <!-- Problem Statement -->
             <div class="col-lg-4">
               <div class="card card-soft h-100">
                 <div class="card-body">
@@ -337,7 +317,6 @@
               </div>
             </div>
 
-            <!-- Project Objectives -->
             <div class="col-lg-4">
               <div class="card card-soft h-100">
                 <div class="card-body">
@@ -355,7 +334,7 @@
       <div class="star-divider">*</div>
       <section class="py-5 bg-white">
         <div class="container">
-          <h2 class="section-title h3 text-center mb-2" id="overviewTitle">Digital Twin Pipeline</h2>
+          <h2 class="section-title h3 text-center mb-2" id="overviewTitle">Methodology</h2>
           <p class="text-center text-muted mb-5 section-subtitle" id="overviewSubtitle"></p>
 
           <div id="stepsRow" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 justify-content-center"></div>
@@ -366,7 +345,7 @@
       <div class="star-divider">*</div>
       <section class="py-5 bg-white">
         <div class="container">
-          <h2 class="section-title h3 text-center mb-2" id="implTitle">Technical Implementation</h2>
+          <h2 class="section-title h3 text-center mb-2" id="implTitle">Methodology Steps (Demo Modules)</h2>
           <p class="text-center text-muted mb-5 section-subtitle" id="implSubtitle"></p>
 
           <div id="modulesContainer"></div>
@@ -377,7 +356,7 @@
       <div class="star-divider">*</div>
       <section class="py-5 bg-light">
         <div class="container">
-          <h2 class="section-title h3 text-center mb-2" id="resultsTitle">Results & Potential Improvements</h2>
+          <h2 class="section-title h3 text-center mb-2" id="resultsTitle">Results</h2>
           <p class="text-center text-muted mb-4 section-subtitle" id="resultsSubtitle"></p>
 
           <div class="card card-soft">
@@ -389,6 +368,7 @@
                       <th>Metric</th>
                       <th>Baseline</th>
                       <th>Tested Scenario</th>
+                      <th>Improvement/Degradation</th>
                       <th>Unit</th>
                       <th class="text-muted">Note</th>
                     </tr>
@@ -399,11 +379,32 @@
             </div>
           </div>
 
+          <!-- CHARTS SPACE -->
+          <div class="row g-4 mt-4">
+            <div class="col-lg-6">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h6 fw-bold mb-3" id="chartLeftTitle">Average Delay per Approach</h3>
+                  <img id="chartLeftImg" class="img-fluid rounded" src="" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card card-soft h-100">
+                <div class="card-body">
+                  <h3 class="h6 fw-bold mb-3" id="chartRightTitle">Average Delay (Overall)</h3>
+                  <img id="chartRightImg" class="img-fluid rounded" src="" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="row g-4 mt-3">
             <div class="col-lg-12">
               <div class="card card-soft">
                 <div class="card-body">
-                  <h3 class="h5 mb-2" id="discussionTitle">Discussion (Safe Language)</h3>
+                  <h3 class="h5 mb-2" id="discussionTitle">Discussion</h3>
                   <ul class="mb-0" id="discussionList"></ul>
                   <p class="kpi-note mt-3 mb-0" id="disclaimerLong"></p>
                 </div>
@@ -492,7 +493,6 @@
     <script>
       const C = window.SITE_CONFIG || {};
 
-      // Theme vars
       if (C.theme) {
         document.documentElement.style.setProperty("--hero-bg",  C.theme.heroBg  || "#111");
         document.documentElement.style.setProperty("--hero-fg",  C.theme.heroText || "#fff");
@@ -509,7 +509,6 @@
         document.documentElement.style.setProperty("--footer-border", C.footer.footerBorder || "#222");
       }
 
-      // Title
       if (C.pageTitle) document.title = C.pageTitle;
 
       const el = (id) => document.getElementById(id);
@@ -522,7 +521,6 @@
         ul.innerHTML = (items || []).map(t => `<li>${t}</li>`).join("");
       };
 
-      // Brand link
       const brandLink = el("brandLink");
       if (brandLink) {
         brandLink.textContent = C.navBrand || "Student Academic Showcase";
@@ -531,7 +529,6 @@
       const footerHome = el("footerHome");
       if (footerHome) footerHome.href = C.homeUrl || "https://roadwayvr.com";
 
-      // Hero
       if (C.hero) {
         setHTML("heroQuote", C.hero.quoteHtml);
         setText("studioName", C.hero.studioName || "");
@@ -554,7 +551,6 @@
         }
       }
 
-      // Disclaimer
       if (C.disclaimer) {
         setText("noticeTitle", "Academic Disclaimer");
         setText("noticeText", C.disclaimer.short || "");
@@ -562,7 +558,6 @@
         setText("disclaimerLong", C.disclaimer.long || "");
       }
 
-      // Intro
       if (C.intro) {
         setText("introTitle", C.intro.title);
         setText("introSubtitle", C.intro.subtitle);
@@ -581,20 +576,19 @@
         }
       }
 
-      // Introduction (3 boxes)
       if (C.caseStudy) {
         setText("caseTitle", C.caseStudy.title || "Introduction");
+
         setText("backgroundTitle", C.caseStudy.backgroundTitle || "Background");
-        setText("backgroundText", C.caseStudy.introText || "");
+        fillList("backgroundList", C.caseStudy.backgroundBullets || []);
 
-        setText("problemTitle", C.caseStudy.problemTitle);
-        setText("objectivesTitle", C.caseStudy.objectivesTitle);
-
+        setText("problemTitle", C.caseStudy.problemTitle || "Problem Statement");
         fillList("problemList", C.caseStudy.problemBullets || []);
+
+        setText("objectivesTitle", C.caseStudy.objectivesTitle || "Project Objectives");
         fillList("objectivesList", C.caseStudy.objectivesBullets || []);
       }
 
-      // Overview steps
       if (C.overview) {
         setText("overviewTitle", C.overview.title);
         setText("overviewSubtitle", C.overview.subtitle);
@@ -613,7 +607,6 @@
         }
       }
 
-      // Implementation modules (no demo video links)
       if (C.implementation) {
         setText("implTitle", C.implementation.title);
         setText("implSubtitle", C.implementation.subtitle);
@@ -648,7 +641,6 @@
         }
       }
 
-      // Results
       if (C.results) {
         setText("resultsTitle", C.results.title);
         setText("resultsSubtitle", C.results.subtitle);
@@ -661,16 +653,30 @@
               <td><strong>${k.metric || ""}</strong></td>
               <td>${k.baseline || ""}</td>
               <td>${k.improved || ""}</td>
+              <td>${k.change || ""}</td>
               <td>${k.unit || ""}</td>
               <td class="text-muted">${k.note || ""}</td>
             </tr>
           `).join("");
         }
 
+        if (C.results.charts) {
+          const L = C.results.charts.left || {};
+          const R = C.results.charts.right || {};
+
+          setText("chartLeftTitle", L.title || "Average Delay per Approach");
+          setText("chartRightTitle", R.title || "Average Delay (Overall)");
+
+          const li = el("chartLeftImg");
+          if (li && L.src) { li.src = L.src; li.alt = L.alt || ""; }
+
+          const ri = el("chartRightImg");
+          if (ri && R.src) { ri.src = R.src; ri.alt = R.alt || ""; }
+        }
+
         fillList("discussionList", C.results.discussionBullets || []);
       }
 
-      // Team
       if (C.team) {
         setText("teamTitle", C.team.title);
         setText("teamSubtitle", C.team.subtitle || "");
