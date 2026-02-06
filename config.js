@@ -79,7 +79,6 @@ window.SITE_CONFIG = {
 
   overview: {
     title: "Methodology",
-    subtitle: "A 4-step pipeline used in this case study: Computer Vision → Simulation → Optimization → Decision.",
     steps: [
       {
         title: "Step 1: Data Layer (Computer Vision)",
@@ -106,8 +105,6 @@ window.SITE_CONFIG = {
 
   implementation: {
     title: "Methodology Steps (Demo Modules)",
-    subtitle:
-      "Each module includes evidence (screenshots/plots) showing what was implemented and how outputs were validated at a basic academic level.",
 
     modules: [
       {
