@@ -42,8 +42,16 @@
 
       /* removed quote + top brand/kicker visually by not rendering them (we also remove in HTML) */
       .hero-tagline{
-        opacity: 0.9;
-        font-size: 0.95rem;
+        opacity: 1;
+        font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        margin: 0 auto 0.9rem;
+        display: inline-block;
+        padding: 0.45rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.10);
+        border: 1px solid rgba(255,255,255,0.18);
       }
 
       .section-title{
