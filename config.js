@@ -56,13 +56,11 @@ window.SITE_CONFIG = {
       "Autoplay preview (≈20 seconds): raw video → detections/tracks → SUMO baseline → signal timing scenarios → KPI comparison dashboard."
   },
 
+  // Introduction (3 boxes)
   caseStudy: {
     title: "Introduction",
-    locationLabel: "Study Location",
-    locationValue: "Example: Main St & 2nd Ave, City of X, Province",
-    timeframeLabel: "Data Window",
-    timeframeValue: "Example: Weekday PM peak (4–6 PM), Fall 2025",
 
+    // This text fills the Background box
     introText:
       "We selected a single intersection and treated it as a case study to practice how planners and engineers evaluate operational performance using data-driven methods. The goal is to compare baseline conditions to potential improvements in simulation under clearly stated assumptions.",
 
@@ -79,74 +77,37 @@ window.SITE_CONFIG = {
       "Build a baseline SUMO model that matches observed demand and approximate field conditions.",
       "Test signal timing strategies as controlled what-if scenarios (cycle, splits, offsets, phasing).",
       "Summarize scenario performance using measurable KPIs and communicate findings clearly."
-    ],
-
-    deliverablesTitle: "Academic Deliverables",
-    deliverablesBullets: [
-      "Annotated video clips and extracted counts/turning movements.",
-      "SUMO network + demand files with calibration notes.",
-      "Scenario comparison table (baseline vs strategies) with KPI plots.",
-      "Short demo video + GitHub repo for reproducibility."
     ]
-  },
-
-  dataMethods: {
-    title: "Data & Tools (Transparency)",
-    subtitle:
-      "To support responsible academic use, we document data sources, tools, assumptions, and limitations. Results are simulation-based and should be interpreted as educational what-if outcomes—not field-validated agency conclusions.",
-
-    dataSourcesTitle: "Data Sources",
-    dataSources: [
-      {
-        name: "Video Data",
-        detail:
-          "Course-provided footage of the study intersection used to estimate volumes and turning movements. If public footage is used, cite the URL and date accessed.",
-        url: ""
-      },
-      {
-        name: "Intersection Geometry",
-        detail:
-          "Road layout created from OpenStreetMap and refined in QGIS (lanes, approaches, connectors).",
-        url: ""
-      },
-      {
-        name: "Signal Timing",
-        detail:
-          "Baseline timing assumed/derived from observation. Any missing parameters are documented as assumptions.",
-        url: ""
-      }
-    ],
-
-    toolsTitle: "Tools Used",
-    tools: [
-      "Python (data processing, metrics, plots)",
-      "YOLO/Detector (object detection)",
-      "Tracker (e.g., ByteTrack) for trajectories",
-      "SUMO (microsimulation model)",
-      "QGIS / OSM (network building)",
-      "Unity / Dashboard (visualization)"
-    ],
-
-    assumptionsTitle: "Assumptions & Limitations",
-    assumptionsBullets: [
-      "Simulation performance depends on calibration quality and the representativeness of the observed time window.",
-      "Some parameters (e.g., driver behavior, compliance, exact signal settings) may be approximated and documented.",
-      "Optimized strategies are evaluated in simulation only and are not validated or endorsed by the city.",
-      "Results are scenario-specific and may change across different days, weather conditions, or demand patterns."
-    ],
-
-    reproducibilityNote:
-      "Reproducibility: we provide the model files, scripts, and a short ‘How to run’ section in the repository so others can reproduce the baseline and scenario outputs."
   },
 
   overview: {
     title: "Methodology",
     subtitle: "A 4-step pipeline used in this case study: Computer Vision → Simulation → Optimization → Decision.",
     steps: [
-      { title: "Step 1: Data Layer (Computer Vision)", text: "We detect and track road users from the video to estimate turning volumes, trajectories, speeds, and time headways. These outputs become inputs to the simulation model.", image: "assets/img/image2.jpg" },
-      { title: "Step 2: Model Layer (Traffic Simulation)", text: "We build a SUMO network for the intersection/corridor and calibrate demand and behavior so baseline queues and travel times are reasonable compared to what is observed.", image: "assets/img/image3.jpg" },
-      { title: "Step 3: Connection Layer (Signal Optimization)", text: "We test alternative timing plans (cycle length, green splits, offsets, phases). Each scenario is evaluated using consistent KPIs to enable a fair comparison.", image: "assets/img/image4.jpg" },
-      { title: "Step 4: Service Layer (Decision & Visualization)", text: "We communicate outcomes with KPI dashboards, plots, and short animations to help a non-technical audience understand tradeoffs between scenarios.", image: "assets/img/image5.jpg" }
+      {
+        title: "Step 1: Data Layer (Computer Vision)",
+        text:
+          "We detect and track road users from the video to estimate turning volumes, trajectories, speeds, and time headways. These outputs become inputs to the simulation model.",
+        image: "assets/img/image2.jpg"
+      },
+      {
+        title: "Step 2: Model Layer (Traffic Simulation)",
+        text:
+          "We build a SUMO network for the intersection/corridor and calibrate demand and behavior so baseline queues and travel times are reasonable compared to what is observed.",
+        image: "assets/img/image3.jpg"
+      },
+      {
+        title: "Step 3: Connection Layer (Signal Optimization)",
+        text:
+          "We test alternative timing plans (cycle length, green splits, offsets, phases). Each scenario is evaluated using consistent KPIs to enable a fair comparison.",
+        image: "assets/img/image4.jpg"
+      },
+      {
+        title: "Step 4: Service Layer (Decision & Visualization)",
+        text:
+          "We communicate outcomes with KPI dashboards, plots, and short animations to help a non-technical audience understand tradeoffs between scenarios.",
+        image: "assets/img/image5.jpg"
+      }
     ]
   },
 
@@ -157,7 +118,6 @@ window.SITE_CONFIG = {
     introText:
       "Below we document key technical decisions so the work is transparent and reproducible. The emphasis is on clear inputs/outputs and measurable evidence—not marketing claims.",
 
-    // ✅ videoUrl removed from all modules
     modules: [
       {
         title: "Module 1: Sensing",
@@ -231,16 +191,12 @@ window.SITE_CONFIG = {
       "Course: Digital Twins for Smart Cities",
       "Institution: RoadwayVR University",
       "Instructor: Ahmad Mohammadi",
-      "Data: Course-provided video and/or public sources (listed above)",
+      "Data: Course-provided video and/or public sources",
       "Tools: SUMO, Python, CV models, and visualization tools"
     ],
     creditsLine:
       "Credits: This is a student academic project. Any errors or interpretations are the student’s own.",
     repoLabel: "Project Repository",
-    repoUrl: "https://github.com/USERNAME/REPO",
-    extraLinks: [
-      { label: "Demo Video", url: "https://youtu.be/PUT_VIDEO_LINK_HERE" },
-      { label: "Final Report (PDF)", url: "assets/report/final-report.pdf" }
-    ]
+    repoUrl: "https://github.com/USERNAME/REPO"
   }
 };
