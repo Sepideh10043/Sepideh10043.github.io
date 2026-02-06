@@ -1,14 +1,12 @@
 // config.js (Students edit only this file)
 window.SITE_CONFIG = {
   pageTitle: "Academic Digital Twin Case Study | Student Showcase",
-  navBrand: "Student Academic Showcase",
   homeUrl: "https://roadwayvr.com",
 
   hero: {
-    quoteHtml: "“Digital twins turn data into decisions.”",
     profileImage: "assets/img/image1.jpg",
-    studioName: "Academic Digital Twin Studio",
-    tagline: "Course Project · Educational Case Study",
+    // ✅ updated tagline text
+    tagline: "Course Project: Digital Twins for Smart Cities",
     studentName: "Yohan Mohammadi",
     program: "Program / Department",
     university: "RoadwayVR University, Canada",
@@ -42,10 +40,10 @@ window.SITE_CONFIG = {
     footerBorder: "#222222"
   },
 
+  // ✅ Intro now holds project title content
   intro: {
-    title: "Digital Twin Case Study",
-    subtitle:
-      "This website presents an academic case study that demonstrates the full digital twin pipeline using a real-world intersection video. We extract traffic demand with computer vision, build and calibrate a SUMO model, test signal timing strategies as what-if scenarios, and communicate results through clear KPIs and visualizations.",
+    projectTitleLabel: "Project Title",
+    projectTitle: "Digital Twin of an Urban Intersection Using Video-Based Demand Estimation and SUMO Scenario Testing",
     heroVideo: "assets/video/video.mp4",
     heroVideoPoster: "",
     heroVideoAlt: "Autoplay preview video (academic project)",
@@ -157,22 +155,22 @@ window.SITE_CONFIG = {
       "We compare baseline conditions to tested scenarios using measurable KPIs. These results are simulation outputs for educational purposes only and are not city-validated or approved.",
 
     kpis: [
-      { metric: "Average Delay",         baseline: "45",  improved: "36",  change: "-20%", unit: "s/veh", note: "Overall" },
-      { metric: "Average Stopped Delay", baseline: "28",  improved: "22",  change: "-21%", unit: "s/veh", note: "Overall" },
-      { metric: "Throughput",           baseline: "1800",improved: "1950",change: "+8%",  unit: "veh/h", note: "Total served" },
-      { metric: "Emission",             baseline: "100", improved: "87",  change: "-13%", unit: "kg",    note: "CO₂ (example)" },
-      { metric: "LOS",                  baseline: "D",   improved: "C",   change: "Improved", unit: "-", note: "Intersection LOS" }
+      { metric: "Average Delay",         baseline: "45",   improved: "36",   change: "-20%",     unit: "s/veh", note: "Overall" },
+      { metric: "Average Stopped Delay", baseline: "28",   improved: "22",   change: "-21%",     unit: "s/veh", note: "Overall" },
+      { metric: "Throughput",           baseline: "1800", improved: "1950", change: "+8%",      unit: "veh/h", note: "Total served" },
+      { metric: "Emission",             baseline: "100",  improved: "87",   change: "-13%",     unit: "kg",    note: "CO₂ (example)" },
+      { metric: "LOS",                  baseline: "D",    improved: "C",    change: "Improved", unit: "-",     note: "Intersection LOS" }
     ],
 
     charts: {
       left: {
         title: "Average Delay per Approach",
-        src: "assets/img/image6.jpg",
+        src: "assets/img/chart_delay_per_approach.png",
         alt: "Average delay per approach chart"
       },
       right: {
         title: "Average Delay (Overall)",
-        src: "assets/img/image7.jpg",
+        src: "assets/img/chart_delay_overall.png",
         alt: "Overall average delay chart"
       }
     },
