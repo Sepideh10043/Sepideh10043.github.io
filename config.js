@@ -9,9 +9,9 @@ window.SITE_CONFIG = {
     profileImage: "assets/img/image1.jpg", // student photo OR lab logo
     studioName: "Academic Digital Twin Studio",
     tagline: "Course Project · Educational Case Study",
-    studentName: "Your Name",
+    studentName: "Yohan Mohammadi",
     program: "Program / Department",
-    university: "Your University, Canada",
+    university: "XYZ University, Canada",
     email: "your.email@example.com"
   },
 
@@ -63,7 +63,7 @@ window.SITE_CONFIG = {
   },
 
   caseStudy: {
-    title: "Case Study Context",
+    title: "Introduction",
     locationLabel: "Study Location",
     locationValue: "Example: Main St & 2nd Ave, City of X, Province",
     timeframeLabel: "Data Window",
