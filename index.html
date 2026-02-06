@@ -40,7 +40,22 @@
         color: var(--hero-fg);
       }
 
-      /* removed quote + top brand/kicker visually by not rendering them (we also remove in HTML) */
+      /* NEW: course code tag above course project pill */
+      .hero-course-tag{
+        display: inline-block;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.10);
+        border: 1px solid rgba(255,255,255,0.18);
+        color: rgba(255,255,255,0.92);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        margin-bottom: 0.45rem;
+      }
+
+      /* Your eye-catching course project pill */
       .hero-tagline{
         opacity: 1;
         font-size: clamp(1.2rem, 2.4vw, 1.7rem);
@@ -209,10 +224,11 @@
     <header class="hero-banner text-center py-5">
       <div class="container">
 
-        <!-- ✅ Only keep the course line (updated text) -->
-        <div class="hero-tagline mb-3" id="studioTagline">
-          Course Project: Digital Twins for Smart Cities
-        </div>
+        <!-- NEW: course tag -->
+        <div class="hero-course-tag" id="courseTag" style="display:none;">RWR 4013</div>
+
+        <!-- Course project pill -->
+        <div class="hero-tagline" id="studioTagline">Course Project: Digital Twins for Smart Cities</div>
 
         <img
           src="assets/img/image1.jpg"
@@ -245,10 +261,9 @@
       <!-- INTRO + AUTOPLAY VIDEO -->
       <section class="py-3 text-center bg-white">
         <div class="container">
-          <!-- ✅ Replace intro title/subtitle with Project Title block -->
-          <h1 class="section-title h2 mb-2" id="projectTitleLabel">Project Title</h1>
-          <p class="lead mb-4 section-subtitle" id="projectTitleValue">
-            Your Project Title Here
+          <h1 class="section-title h2 mb-3" id="introTitle">Project Title</h1>
+          <p class="lead mb-4 section-subtitle" id="introSubtitle">
+            Digital Twin of an Urban Intersection Using Video-Based Demand Estimation and SUMO Scenario Testing
           </p>
 
           <div class="intro-video-wrap">
@@ -268,7 +283,7 @@
           </div>
 
           <p class="mt-3 mb-0 text-muted small" id="introCaption">
-            Autoplay preview: sensing → simulation → optimization → visualization (20s)
+            Autoplay preview (≈20 seconds): raw video → detections/tracks → SUMO baseline → signal timing scenarios → KPI comparison dashboard.
           </p>
         </div>
       </section>
@@ -316,7 +331,6 @@
       <section class="py-5 bg-white">
         <div class="container">
           <h2 class="section-title h3 text-center mb-2" id="overviewTitle">Methodology</h2>
-          <p class="text-center text-muted mb-5 section-subtitle" id="overviewSubtitle"></p>
 
           <div id="stepsRow" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 justify-content-center"></div>
         </div>
@@ -327,8 +341,6 @@
       <section class="py-5 bg-white">
         <div class="container">
           <h2 class="section-title h3 text-center mb-2" id="implTitle">Methodology Steps (Demo Modules)</h2>
-          <p class="text-center text-muted mb-5 section-subtitle" id="implSubtitle"></p>
-
           <div id="modulesContainer"></div>
         </div>
       </section>
@@ -494,7 +506,6 @@
 
       const el = (id) => document.getElementById(id);
       const setText = (id, val) => { const x = el(id); if (x && val != null) x.textContent = val; };
-      const setHTML = (id, val) => { const x = el(id); if (x && val != null) x.innerHTML = val; };
 
       const fillList = (ulId, items) => {
         const ul = el(ulId);
@@ -502,13 +513,24 @@
         ul.innerHTML = (items || []).map(t => `<li>${t}</li>`).join("");
       };
 
-      // footer home
       const footerHome = el("footerHome");
-      if (footerHome) footerHome.href = C.homeUrl || "#";
+      if (footerHome) footerHome.href = C.homeUrl || "https://roadwayvr.com";
 
-      // Hero (now only tagline + profile + contact)
+      // HERO
       if (C.hero) {
-        setText("studioTagline", C.hero.tagline || "Course Project: Digital Twins for Smart Cities");
+        // course tag
+        const ct = el("courseTag");
+        const tagText = (C.hero.courseTag || "").trim();
+        if (ct) {
+          if (tagText) {
+            ct.textContent = tagText;
+            ct.style.display = "inline-block";
+          } else {
+            ct.style.display = "none";
+          }
+        }
+
+        setText("studioTagline", C.hero.tagline || "");
 
         const img = el("profileImg");
         if (img && C.hero.profileImage) img.src = C.hero.profileImage;
@@ -530,16 +552,15 @@
 
       // Disclaimer
       if (C.disclaimer) {
-        setText("noticeTitle", "Academic Disclaimer");
         setText("noticeText", C.disclaimer.short || "");
         setText("footerDisclaimer", C.disclaimer.short || "");
         setText("disclaimerLong", C.disclaimer.long || "");
       }
 
-      // Project title block (replaces old intro title/subtitle)
+      // Intro (project title)
       if (C.intro) {
-        setText("projectTitleLabel", C.intro.projectTitleLabel || "Project Title");
-        setText("projectTitleValue", C.intro.projectTitle || "");
+        setText("introTitle", C.intro.projectTitleLabel || "Project Title");
+        setText("introSubtitle", C.intro.projectTitle || "");
 
         setText("introCaption", C.intro.videoCaption || "");
 
@@ -570,11 +591,9 @@
         fillList("objectivesList", C.caseStudy.objectivesBullets || []);
       }
 
-      // Overview steps
+      // Method steps
       if (C.overview) {
-        setText("overviewTitle", C.overview.title);
-        setText("overviewSubtitle", C.overview.subtitle);
-
+        setText("overviewTitle", C.overview.title || "Methodology");
         const stepsRow = el("stepsRow");
         if (stepsRow && Array.isArray(C.overview.steps)) {
           stepsRow.innerHTML = C.overview.steps.slice(0, 4).map(step => `
@@ -589,10 +608,9 @@
         }
       }
 
-      // Implementation modules
+      // Modules
       if (C.implementation) {
-        setText("implTitle", C.implementation.title);
-        setText("implSubtitle", C.implementation.subtitle);
+        setText("implTitle", C.implementation.title || "Methodology Steps (Demo Modules)");
 
         const wrap = el("modulesContainer");
         const modules = Array.isArray(C.implementation.modules) ? C.implementation.modules.slice(0, 4) : [];
@@ -610,9 +628,7 @@
                 <div class="col-lg-6 ${textColOrder} tutorial-text-col">
                   <div>
                     <h3 class="h4 mb-2">${m.title || ""}</h3>
-                    <ul class="check-list">
-                      ${bulletHtml}
-                    </ul>
+                    <ul class="check-list">${bulletHtml}</ul>
                   </div>
                 </div>
                 <div class="col-lg-6 ${imgColOrder}">
@@ -626,8 +642,8 @@
 
       // Results
       if (C.results) {
-        setText("resultsTitle", C.results.title);
-        setText("resultsSubtitle", C.results.subtitle);
+        setText("resultsTitle", C.results.title || "Results");
+        setText("resultsSubtitle", C.results.subtitle || "");
         setText("discussionTitle", C.results.discussionTitle || "Discussion");
 
         const tbody = el("kpiTbody");
@@ -663,7 +679,7 @@
 
       // Team
       if (C.team) {
-        setText("teamTitle", C.team.title);
+        setText("teamTitle", C.team.title || "Team & Acknowledgments");
         setText("teamSubtitle", C.team.subtitle || "");
 
         const teamList = el("teamList");
@@ -672,6 +688,7 @@
             <li><strong>${m.name || ""}</strong> — ${m.role || ""}</li>
           `).join("");
         }
+
         fillList("ackList", C.team.acknowledgments || []);
 
         setText("repoLabel", C.team.repoLabel || "Project Repository");
