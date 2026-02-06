@@ -141,9 +141,9 @@ window.SITE_CONFIG = {
 
   overview: {
     title: "Methodology",
-    subtitle: "A 4-step pipeline used in this case study: Sensing → Simulating → Optimizing → Visualizing.",
+    subtitle: "A 4-step pipeline used in this case study: Computer Vision → Simulation → Optimization → Decision.",
     steps: [
-      { title: "Step 1: Sensing (Computer Vision)", text: "We detect and track road users from the video to estimate turning volumes, trajectories, speeds, and time headways. These outputs become inputs to the simulation model.", image: "assets/img/image2.jpg" },
+      { title: "Step 1: Data Layer (Computer Vision)", text: "We detect and track road users from the video to estimate turning volumes, trajectories, speeds, and time headways. These outputs become inputs to the simulation model.", image: "assets/img/image2.jpg" },
       { title: "Step 2: Simulating (Traffic Simulation)", text: "We build a SUMO network for the intersection/corridor and calibrate demand and behavior so baseline queues and travel times are reasonable compared to what is observed.", image: "assets/img/image3.jpg" },
       { title: "Step 3: Optimizing (Signal Strategy Testing)", text: "We test alternative timing plans (cycle length, green splits, offsets, phases). Each scenario is evaluated using consistent KPIs to enable a fair comparison.", image: "assets/img/image4.jpg" },
       { title: "Step 4: Visualizing (Decision Support)", text: "We communicate outcomes with KPI dashboards, plots, and short animations to help a non-technical audience understand tradeoffs between scenarios.", image: "assets/img/image5.jpg" }
