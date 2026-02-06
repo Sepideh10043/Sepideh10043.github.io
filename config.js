@@ -100,7 +100,7 @@ window.SITE_CONFIG = {
   },
 
   dataMethods: {
-    title: "Data & Methods (Transparency)",
+    title: "Data & Tools (Transparency)",
     subtitle:
       "To support responsible academic use, we document data sources, tools, assumptions, and limitations. Results are simulation-based and should be interpreted as educational what-if outcomes—not field-validated agency conclusions.",
 
