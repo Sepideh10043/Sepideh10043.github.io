@@ -11,7 +11,7 @@ window.SITE_CONFIG = {
     tagline: "Course Project · Educational Case Study",
     studentName: "Yohan Mohammadi",
     program: "Program / Department",
-    university: "XYZ University, Canada",
+    university: "RoadwayVR University, Canada",
     email: "your.email@example.com"
   },
 
@@ -23,7 +23,7 @@ window.SITE_CONFIG = {
       "This website presents a student academic project created for coursework. Any analyses, results, and potential improvements are simulation-based and provided for educational purposes only. They do not represent official work, endorsement, or consultation for any city or agency.",
     cityName: "City of X (example)",
     courseName: "Digital Twins for Smart Cities",
-    institutionName: "York University",
+    institutionName: "RoadwayVR University",
 
     // NEW: optional video overlay text you can add in your edited video (first 2–3 seconds)
     videoOverlaySuggestion:
