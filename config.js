@@ -142,7 +142,7 @@ window.SITE_CONFIG = {
         image: "assets/img/image3.jpg"
       },
       {
-        title: "Immersive VR Visualization (Unity)",
+        title: "Module 3: Immersive VR Visualization (Unity)",
         bullets: [
 				  { text: "Develop a 3D railway environment including stations, buildings, trees, and rolling stock." },
           { text: "Configure visualization fundamentals: lighting, camera position, time of day, and scene composition." },
