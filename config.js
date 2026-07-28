@@ -7,14 +7,14 @@ window.SITE_CONFIG = {
     profileImage: "assets/img/image1.jpg",
 
     // NEW: course code tag shown above the course project pill
-    courseTag: "RWR 4013",
+    courseTag: "SMRTTECH 4SC3",
 
     // updated tagline text (big pill)
     tagline: "Course Project: Digital Twins for Smart Cities",
 
     studentName: "Yohan Mohammadi",
     program: "Program / Department",
-    university: "RoadwayVR University, Canada",
+    university: "McMaster University, Canada",
     email: "your.email@example.com"
   },
 
@@ -47,12 +47,12 @@ window.SITE_CONFIG = {
 
   intro: {
     projectTitleLabel: "Project Title",
-    projectTitle: "Digital Twin of an Urban Intersection Using Video-Based Demand Estimation and SUMO Scenario Testing",
+    projectTitle: "Development of Digital Twin of a Railway Corridor Using Unity Game Engine and SUMO Traffic Simulation",
     heroVideo: "assets/video/video.mp4",
     heroVideoPoster: "",
     heroVideoAlt: "Autoplay preview video (academic project)",
     videoCaption:
-      "Autoplay preview (≈20 seconds): raw video → detections/tracks → SUMO baseline → signal timing scenarios → KPI comparison dashboard."
+      "Autoplay preview (≈20 seconds): raw video → Traffic Simulation → Blender → Unity → Results"
   },
 
   caseStudy: {
@@ -60,24 +60,26 @@ window.SITE_CONFIG = {
 
     backgroundTitle: "Background",
     backgroundBullets: [
-      "Single-intersection case study for practicing data-driven operational evaluation.",
-      "Compare baseline conditions to potential improvements using simulation under stated assumptions.",
-      "Focus on transparent methods and measurable KPIs (educational what-if outcomes)."
+			"Global freight rail is growing and remains strategically important.",
+			"Rail carries about 18% of EU inland freight, 36% in the U.S., and 27% in India.",
+			"Road dominates many freight systems, so rail often receives less attention.",
+			"In Canada, rail accounted for 10.5% of international merchandise trade value in 2024."
     ],
 
     problemTitle: "Problem Statement",
     problemBullets: [
-      "Observed congestion and queue spillback during peak periods (video evidence).",
-      "Stop-and-go conditions and turning interactions may increase perceived conflict risk.",
-      "Need to compare low-cost operational strategies before considering major geometric changes."
+			"Limited hands-on practice with railway design tools.",
+			"Minimal exposure to 3D visualization and VR workflows.",
+			"Little experience with rail simulation for scheduling and signaling.",
+			"Few opportunities to present work in a professional digital format."
     ],
 
     objectivesTitle: "Project Objectives",
     objectivesBullets: [
-      "Extract traffic volumes, turning movements, and trajectories from video using computer vision.",
-      "Build a baseline SUMO model that matches observed demand and approximate field conditions.",
-      "Test signal timing strategies as controlled what-if scenarios (cycle, splits, offsets, phasing).",
-      "Summarize scenario performance using measurable KPIs and communicate findings clearly."
+			"Design a railway corridor in OpenRail ConceptStation.",
+			"Create a 3D rail environment and VR video in LumenRT.",
+			"Simulate train scheduling, signaling, and capacity in SUMO.",
+			"Present results through KPIs, figures, and a showcase website."
     ]
   },
 
@@ -85,23 +87,23 @@ window.SITE_CONFIG = {
     title: "Methodology",
     steps: [
       {
-        title: "Step 1: Data Layer (Computer Vision)",
-        text: "We detect and track road users from the video to estimate turning volumes, trajectories, speeds, and time headways. These outputs become inputs to the simulation model.",
+        title: "Step 1: Train Scheduling and Signaling (SUMO Simulation)",
+				text: "Build the rail network and test routing, signaling, and timetables.",
         image: "assets/img/image2.jpg"
       },
       {
-        title: "Step 2: Model Layer (Traffic Simulation)",
-        text: "We build a SUMO network for the intersection/corridor and calibrate demand and behavior so baseline queues and travel times are reasonable compared to what is observed.",
+				title: "Step 2: Digital Twin Assets Developement (Blender)",
+				text: "Create a 3D railway assets using generative AI and blender.",
         image: "assets/img/image3.jpg"
       },
       {
-        title: "Step 3: Connection Layer (Signal Optimization)",
-        text: "We test alternative timing plans (cycle length, green splits, offsets, phases). Each scenario is evaluated using consistent KPIs to enable a fair comparison.",
+				title: "Step 3: Immersive VR Visualization (Unity)",
+				text: "Create a 3D railway scene and produce a VR 360-degree video.",
         image: "assets/img/image4.jpg"
       },
       {
-        title: "Step 4: Service Layer (Decision & Visualization)",
-        text: "We communicate outcomes with KPI dashboards, plots, and short animations to help a non-technical audience understand tradeoffs between scenarios.",
+				title: "Step 4: Results & Communication (Figures + Showcase Website)",
+				text: "Summarize results using figures, KPIs, and the showcase website.",
         image: "assets/img/image5.jpg"
       }
     ]
@@ -111,34 +113,34 @@ window.SITE_CONFIG = {
     title: "Methodology Steps (Demo Modules)",
     modules: [
       {
-        title: "Module 1: Sensing",
+        title: "Module 1: Train Scheduling & Signaling (SUMO)",
         bullets: [
-          { text: "Detector + tracker used (e.g., YOLOv8 + ByteTrack) and why chosen." },
-          { text: "Extraction of turning volumes and movement counts from tracked trajectories." },
-          { text: "Quality checks: occlusion notes, sample frames, and error sources." }
+				  { text: "Build a simulated rail network in SUMO with train routing and maximum operating speed." },
+          { text: "Design fixed-block rail signals and define station stops along the corridor." },
+          { text: "Configure timetable, scheduled departures, running time, dwell time, and headway." }
         ],
         image: "assets/img/image2.jpg"
       },
       {
-        title: "Module 2: Simulating",
+        title: "Module 2: Digital Twin Assets Developement (Blender)",
         bullets: [
-          { text: "Network build: lanes/connectors, routes, demand inputs from Module 1." },
-          { text: "Calibration evidence (travel time, queue length, or GEH comparison where possible)." },
-          { text: "Baseline KPIs: delay, queues, stops, throughput (brief summary)." }
+          { text: "Generative AI: use Meshy.ai tool to develop different assets." },
+          { text: "From generative AI to belnder." },
+          { text: "Preprocessing assets in Blender ." }
         ],
         image: "assets/img/image3.jpg"
       },
       {
-        title: "Module 3: Signal Strategy Testing",
+        title: "Immersive VR Visualization (Unity)",
         bullets: [
-          { text: "Decision variables changed: cycle length, splits, offsets, and/or phase structure." },
-          { text: "Scenario design: baseline + 2–3 what-if timing strategies under the same demand." },
-          { text: "Comparison: before vs after KPI table and one clear plot." }
+				  { text: "Develop a 3D railway environment including stations, buildings, trees, and rolling stock." },
+          { text: "Configure visualization fundamentals: lighting, camera position, time of day, and scene composition." },
+          { text: "Produce a VR 360-degree video output for immersive presentation and portfolio use." }
         ],
         image: "assets/img/image4.jpg"
       },
       {
-        title: "Module 4: Visualization",
+        title: "Module 4: Results & Communication",
         bullets: [
           { text: "Dashboard or plot set: KPI cards, bar charts, and/or time series." },
           { text: "Scenario story: what changed, what improved, and what tradeoffs appeared." },
@@ -149,40 +151,33 @@ window.SITE_CONFIG = {
     ]
   },
 
-  results: {
-    title: "Results & Potential Improvements (Simulation-Based)",
-    subtitle:
-      "We compare baseline conditions to tested scenarios using measurable KPIs. These results are simulation outputs for educational purposes only and are not city-validated or approved.",
+	results: {
+			title: "Results & Potential Improvements",
+			subtitle:
+				"Train schedule simulation outputs across two scenarios showing arrivals, departures, and dwell time across four stations. Results are for educational purposes only.",
 
-    kpis: [
-      { metric: "Average Delay",         baseline: "45",   improved: "36",   change: "-20%",     unit: "s/veh", note: "Overall" },
-      { metric: "Average Stopped Delay", baseline: "28",   improved: "22",   change: "-21%",     unit: "s/veh", note: "Overall" },
-      { metric: "Throughput",           baseline: "1800", improved: "1950", change: "+8%",      unit: "veh/h", note: "Total served" },
-      { metric: "Emission",             baseline: "100",  improved: "87",   change: "-13%",     unit: "kg",    note: "CO₂ (example)" },
-      { metric: "LOS",                  baseline: "D",    improved: "C",    change: "Improved", unit: "-",     note: "Intersection LOS" }
-    ],
+			charts: {
+				left: {
+					title: "Scenario 1 — Train Schedule: Arrivals, Departures & Dwell Time",
+					src: "assets/img/image6.jpg",
+					alt: "Scenario 1 train schedule chart showing arrivals and departures across S1 to S4"
+				},
+				right: {
+					title: "Scenario 2 — Train Schedule: Arrivals, Departures & Dwell Time",
+					src: "assets/img/image7.jpg",
+					alt: "Scenario 2 train schedule chart showing arrivals and departures across S1 to S4"
+				}
+			},
 
-    charts: {
-      left: {
-        title: "Average Delay per Approach",
-        src: "assets/img/image6.jpg",
-        alt: "Average delay per approach chart"
-      },
-      right: {
-        title: "Average Delay (Overall)",
-        src: "assets/img/image7.jpg",
-        alt: "Overall average delay chart"
-      }
-    },
-
-    discussionTitle: "Discussion (Safe Language)",
-    discussionBullets: [
-      "In our simulation, timing changes reduced delay and queues under the observed demand conditions.",
-      "Tradeoffs may exist (e.g., one approach improves while another worsens); we report both.",
-      "Additional testing across multiple days/time periods would improve confidence and generalizability.",
-      "Any real-world implementation would require agency review, constraints, and field validation."
-    ]
-  },
+			discussionTitle: "Discussion",
+			discussionBullets: [
+				"Scenario 1 provides a stable baseline timetable with consistent station dwell and smooth train progression.",
+				"Scenario 2 applies a delay at S2, which then propagates to downstream stations.",
+				"Delay effects grow across frequency levels, with major increases in arrival and departure times at S3 and S4.",
+				"S1 is only slightly affected, while downstream stations absorb most of the disruption.",
+				"This demonstrates the importance of recovery time, dwell management, and operational control in rail scheduling."
+			]
+		},
 
   team: {
     title: "Team & Acknowledgments",
@@ -190,14 +185,14 @@ window.SITE_CONFIG = {
       "This section clarifies academic context, roles, tools, and sources. Clear attribution improves credibility and shows ethical data handling.",
 
     members: [
-      { name: "Your Name", role: "Computer Vision + Simulation + KPI Analysis + Reporting" }
+      { name: "Your Name", role: "Rail Scheduling & Signaling + Digital Twin I, Immersive VR Visualization + Results & Communication" }
     ],
 
     acknowledgments: [
-      "Course: Digital Twins for Smart Cities",
+      "Workshop: Railway Engineering",
       "Institution: RoadwayVR University",
       "Instructor: Ahmad Mohammadi",
-      "Tools: SUMO, Python, CV models, and visualization tools"
+      "Tools: SUMO, Blender, Unity, Python"
     ],
 
     repoLabel: "Project Repository",
