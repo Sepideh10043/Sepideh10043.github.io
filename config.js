@@ -79,18 +79,18 @@ window.SITE_CONFIG = {
 
     problemTitle: "Problem Statement",
     problemBullets: [
-			"Limited hands-on practice with railway design tools.",
-			"Minimal exposure to 3D visualization and VR workflows.",
-			"Little experience with rail simulation for scheduling and signaling.",
-			"Few opportunities to present work in a professional digital format."
+			"Railway operations are hard to assess.",
+			"3D asset creation is time-consuming.",
+			"2D models lack immersion.",
+			"Results are difficult to communicate."
     ],
 
     objectivesTitle: "Project Objectives",
     objectivesBullets: [
-			"Design a railway corridor in OpenRail ConceptStation.",
-			"Create a 3D rail environment and VR video in LumenRT.",
 			"Simulate train scheduling, signaling, and capacity in SUMO.",
-			"Present results through KPIs, figures, and a showcase website."
+			"Create 3D digital assets using generative AI and blender.",
+			"Create 3D rail environment and VR video in Unity.",
+			"Present results in different styles through KPIs, figures, and a showcase website."
     ]
   },
 
