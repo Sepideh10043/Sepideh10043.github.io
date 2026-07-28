@@ -40,9 +40,20 @@ window.SITE_CONFIG = {
   },
 
   footer: {
-    footerBg: "#111111",
-    footerText: "#ffffff",
-    footerBorder: "#222222"
+	  footerBg: "#111111",
+	  footerText: "#ffffff",
+	  footerBorder: "#222222",
+	
+	  homeLinkText: "RoadwayVR",
+	
+	  templateCredit:
+	    "This academic showcase template was developed by RoadwayVR.",
+	
+	  templateCreditLinkText:
+	    "Learn more at RoadwayVR.com",
+	
+	  templateCreditUrl:
+	    "https://roadwayvr.com"
   },
 
   intro: {
