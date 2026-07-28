@@ -10,7 +10,7 @@ window.SITE_CONFIG = {
     courseTag: "SMRTTECH 4SC3",
 
     // updated tagline text (big pill)
-    tagline: "Course Project: Digital Twins for Smart Cities",
+    tagline: "Course Project: Smart Cities and Communities",
 
     studentName: "Yohan Mohammadi",
     program: "Program / Department",
