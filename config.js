@@ -12,7 +12,7 @@ window.SITE_CONFIG = {
     // updated tagline text (big pill)
     tagline: "Course Project: Smart Cities and Communities",
 
-    studentName: "Yohan Mohammadi",
+    studentName: "Ahmad Mohammadi",
     program: "Program / Department",
     university: "McMaster University, Canada",
     email: "your.email@example.com"
